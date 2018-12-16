@@ -8,20 +8,13 @@
 	<script>
 		
 //unicode matching in order
-		function fearNotLetter(str) {
-			var i, j = 0, m = 122;
-			if (str) {
-				i = str.charCodeAt(0);
-				while (i <= m && j < str.length) {
-					if (String.fromCharCode(i) !== str.charAt(j)) {
-						return String.fromCharCode(i);
-					}
-					i++; j++;
-				}
-			}
-			return "undefined";
-		}
-		fearNotLetter("");
-	</script>
+function uniteUnique(arr, ...otherArrays) {
+	var love = arr.concat(...otherArrays);
+	let unique = [...new Set(love)]
+	return unique
+}
+uniteUnique([1,3,4],[2,5], [3,6,[5]]);
+
+</script>
 </body>
 </html>
