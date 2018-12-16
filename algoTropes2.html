@@ -10,16 +10,13 @@
 
 		function convertHTML(str) {
   // &colon;&rpar;
-  var entities = new RegExp(/[&<>"']/);
   
-  if(entities.test(str)){
-  	return "At least one entity confimred!";
-  };
-  return "You are entity free!";
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/:/g, '&colon;');
+
+  
 }
 
-convertHTML("George 'me");
-
+convertHTML("George & me");
 
 
 
