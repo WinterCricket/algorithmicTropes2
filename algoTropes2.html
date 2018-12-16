@@ -7,16 +7,17 @@
 <body>
 	<script>
 
-//unicode matching in order
+
 function convertHTML(str) {
   // &colon;&rpar;
-  var entities = new RegExp("&");
+  var entities = new RegExp(/[&<>"']/);
   
   var converted = entities.test(str);
   return converted;
 }
 
-		convertHTML("Dolce & Gabbana");
+convertHTML("George > me");
+
 
 
 </script>
