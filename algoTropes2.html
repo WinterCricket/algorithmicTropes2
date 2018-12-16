@@ -6,15 +6,19 @@
 </head>
 <body>
 	<script>
-		
+
 //unicode matching in order
-function uniteUnique(arr, ...otherArrays) {
-	var love = arr.concat(...otherArrays);
-	let unique = [...new Set(love)]
-	return unique
+function convertHTML(str) {
+  // &colon;&rpar;
+  var entities = new RegExp("&");
+  
+  var converted = entities.test(str);
+  return converted;
 }
-uniteUnique([1,3,4],[2,5], [3,6,[5]]);
+
+		convertHTML("Dolce & Gabbana");
+
 
 </script>
 </body>
-</html>
+</html>s
