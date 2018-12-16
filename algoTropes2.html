@@ -8,15 +8,18 @@
 	<script>
 
 
-function convertHTML(str) {
+		function convertHTML(str) {
   // &colon;&rpar;
   var entities = new RegExp(/[&<>"']/);
   
-  var converted = entities.test(str);
-  return converted;
+  if(entities.test(str)){
+  	return "At least one entity confimred!";
+  };
+  return "You are entity free!";
 }
 
-convertHTML("George > me");
+convertHTML("George 'me");
+
 
 
 
