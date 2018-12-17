@@ -8,18 +8,22 @@
 	<script>
 
 
-		function convertHTML(str) {
-  // &colon;&rpar;
-  
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;').replace(/:/g, '&colon;');
+		var fib_series = function (n) 
+		{
+			if (n===1) 
+			{
+				return [0, 1];
+			} 
+			else 
+			{
+				var s = fib_series(n - 1);
+				s.push(s[s.length - 1] + s[s.length - 2]);
+				return s;
+			}
+		};
 
 
-}
 
-convertHTML("George & me");
-
-
-
-</script>
+	</script>
 </body>
-</html>s
+</html>
