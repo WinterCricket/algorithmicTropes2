@@ -24,6 +24,36 @@
 
 
 
+//attempting to join the fib fnc that creates myArray
+
+var fib_series = function (n) 
+		{
+			if (n===1) 
+			{
+				return [0, 1];
+			} 
+			else 
+			{
+				var s = fib_series(n - 1);
+				s.push(s[s.length - 1] + s[s.length - 2]);
+				return s;
+			}
+		};
+
+let myArray = fib_series(4);
+let it = myArray.length;
+
+for(let i=0; i<it; i++) {
+  for(let j=0; j<myArray.length; j++ )
+    if(myArray[j]%2 === 0){
+      myArray.splice(j,1)
+      break;
+    }
+  };
+
+
+
+
 	</script>
 </body>
 </html>
