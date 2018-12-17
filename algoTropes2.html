@@ -41,15 +41,9 @@ var fib_series = function (n)
 		};
 
 let myArray = fib_series(4);
-let it = myArray.length;
 
-for(let i=0; i<it; i++) {
-  for(let j=0; j<myArray.length; j++ )
-    if(myArray[j]%2 === 0){
-      myArray.splice(j,1)
-      break;
-    }
-  };
+ 
+myArray.filter(function(myArray) { return (myArray & 1) === 1; });
 
 
 
