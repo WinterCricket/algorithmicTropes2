@@ -26,28 +26,33 @@
 
 //attempting to join the fib fnc that creates myArray
 
-var fib_series = function (n) 
+function oddFib(n) {
+
+	var fib_series = function (n) 
+	{
+		if (n===1) 
 		{
-			if (n===1) 
-			{
-				return [0, 1];
-			} 
-			else 
-			{
-				var s = fib_series(n - 1);
-				s.push(s[s.length - 1] + s[s.length - 2]);
-				return s;
-			}
-		};
+			return [0, 1];
+		} 
+		else 
+		{
+			var s = fib_series(n - 1);
+			s.push(s[s.length - 1] + s[s.length - 2]);
+			
+			return s;
+			
+		}
+	};
+	var myArray = fib_series(n);
+	return myArray.filter(function(myArray) { return (myArray & 1) === 1; });
+}
 
-let myArray = fib_series(4);
-
- 
-myArray.filter(function(myArray) { return (myArray & 1) === 1; });
-
-
+oddFib(8);
 
 
-	</script>
+
+
+
+</script>
 </body>
 </html>
