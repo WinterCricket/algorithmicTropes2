@@ -14,7 +14,7 @@
 			var priorNumber = 0;
 			var currentNumber = 1;
 			var output = 0;
-			while (priorNumber <= num) {
+			while (currentNumber <= num) {
 				if (currentNumber % 2 !== 0) {
 					output += currentNumber;
 				}
@@ -23,8 +23,9 @@
 				priorNumber = currentNumber - priorNumber;
 			}
 
-			return currentNumber;
+			return output;
 		}
+		sumFibs(8);
 	</script>
 </body>
 </html>
