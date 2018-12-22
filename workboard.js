@@ -1,12 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Second half of the intermediate algorithms</title>
-</head>
-<body>
-<script>
+
 
 function fibsUpTo(num) {
 
@@ -21,8 +14,6 @@ function fibsUpTo(num) {
 		}
 	}
 }
-console.log(fibsUpTo(4));
-</script>
-</body>
-</html>
+document.getElementById("demo").innerHTML=fibsUpTo(23);
+
 
