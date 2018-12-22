@@ -8,24 +8,57 @@
 	<title>Second half of the intermediate algorithms</title>
 </head>
 <body>
+	<p id="demo"></p>
+
 	<script>
 
-		function sumFibs(num) {
-			var priorNumber = 0;
-			var currentNumber = 1;
-			var output = 0;
-			while (currentNumber <= num) {
-				if (currentNumber % 2 !== 0) {
-					output += currentNumber;
-				}
+		// function sumFibs(num) {
+		// 	var priorNumber = 0;
+		// 	var currentNumber = 1;
+		// 	var output = 0;
+		// 	while (currentNumber <= num) {
+		// 		if (currentNumber % 2 !== 0) {
+		// 			output += currentNumber;
+		// 		}
 
-				currentNumber += priorNumber;
-				priorNumber = currentNumber - priorNumber;
+		// 		currentNumber += priorNumber;
+		// 		priorNumber = currentNumber - priorNumber;
+		// 	}
+
+		// 	return output;
+		// }
+		// console.log(sumFibs(8));
+
+		// function fibsUpTo(num) {
+
+		// 	if(num === 1) return [1,1];
+		// 	var list = [1,1];
+		// 	while(true) {
+		// 		var next = list[list.length -1] + list[list.length -2];
+		// 		if(next <= num) {
+		// 			list.push(next);
+		// 		} else {
+		// 			return list;
+		// 		}
+		// 	}
+		// }
+		// console.log(fibsUpTo(4));
+
+		var fibsUpTo = function (num){
+			if(num ==== 1) {return [1,1];}
+			var list = [1,1];
+			var next = list[list.length - 1] + list[list.length - 2];
+			while(next <= num) {
+				list.push(next);
+			}else {
+				return list;
 			}
 
-			return output;
 		}
-		sumFibs(8);
+		
+		
+		
+		document.getElementById("demo").innerHTML = fibsUpTo(6);
 	</script>
 </body>
 </html>
