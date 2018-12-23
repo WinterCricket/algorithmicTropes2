@@ -49,13 +49,31 @@
 //   document.getElementById("demo").innerHTML = getSum();
 // }
 
-var prices = [1, 2, 125, 2, 19, 14];
+// var prices = [1, 2, 125, 2, 19, 14];
 
-	prices.sort(function(a, b){
-	return a - b;
-});
+// 	prices.sort(function(a, b){
+// 	return a - b;
+// });
 
-function myFunction() {
-  document.getElementById("demo").innerHTML = prices;
+// function myFunction() {
+//   document.getElementById("demo").innerHTML = prices;
+// }
+
+
+function fizzBuzz(num){
+var text = "";
+
+for (var i = 1; i < num; i++) {
+if(i % 2 === 0){ 
+	text+= "Fizz"+ "<br>";
+    }
+if(i % 2 === 1){
+  text += "Buzz "+ "<br>";
+}
+}
+return text;
 }
 
+function myFunction() {
+	document.getElementById("demo").innerHTML = fizzBuzz(12);
+}
