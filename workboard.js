@@ -38,13 +38,24 @@
 
 // var numbers = [65, 44, 12, 4];
 
-var numbers = [65, 44, 12, 4];
+// var numbers = [1,2,3,5,7,11,13,17,23,29,31,37,41,43,47, 51, 53, 57];
 
-function getSum(total, num) {
-  return total + num;
-}
-function myFunction(item) {
-  document.getElementById("demo").innerHTML = numbers.reduce(getSum);
-}
 
+// function getSum(num) {
+	
+//   return numbers.reduce(function(t, n) {return t + n;});
+// }
+// function myFunction(it) {
+//   document.getElementById("demo").innerHTML = getSum();
+// }
+
+var prices = [1, 2, 125, 2, 19, 14];
+
+	prices.sort(function(a, b){
+	return a - b;
+});
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = prices;
+}
 
