@@ -58,7 +58,12 @@
 // function myFunction() {
 //   document.getElementById("demo").innerHTML = prices;
 // }
-
+function sumPrimes(num){
+	var primeArray = primeRange(num);
+	return primeArray.reduce(function(a, b){
+		return a + b;
+	});
+}
 
 function primeRange(num)
 {
@@ -85,5 +90,5 @@ function primeRange(num)
 }
 
 function myFunction() {
-	document.getElementById("demo").innerHTML = primeRange(37);
+	document.getElementById("demo").innerHTML = sumPrimes(19);
 }
