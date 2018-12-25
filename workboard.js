@@ -60,20 +60,30 @@
 // }
 
 
-function fizzBuzz(num){
-var text = "";
-
-for (var i = 1; i < num; i++) {
-if(i % 2 === 0){ 
-	text+= "Fizz"+ "<br>";
-    }
-if(i % 2 === 1){
-  text += "Buzz "+ "<br>";
-}
-}
-return text;
+function primeRange(num)
+{
+  var num_sqrt = Math.sqrt(num),
+    range = [],
+    current = 0;
+  
+  //generate array of numbers
+  for (i = 2; i <= num; i++)
+      range.push(i);
+  
+  //filter multiples out
+  while (range[current] <= num_sqrt)
+  {
+      range = range.filter(function(n)
+      {
+          return (n == range[current] || n % range[current] != 0);
+      });
+      
+      current++;
+  }
+  
+  return range;
 }
 
 function myFunction() {
-	document.getElementById("demo").innerHTML = fizzBuzz(12);
+	document.getElementById("demo").innerHTML = primeRange(37);
 }
