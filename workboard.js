@@ -71,11 +71,10 @@ function primeRange(num)
     range = [],
     current = 0;
   
-  //generate array of numbers
-  for (i = 2; i <= num; i++)
+  
+  for (var i = 2; i <= num; i++)
       range.push(i);
   
-  //filter multiples out
   while (range[current] <= num_sqrt)
   {
       range = range.filter(function(n)
