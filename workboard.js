@@ -1,19 +1,17 @@
 
 
 
-function smallestCommons(arr){
-	if(arr[0] > arr[i]){
-		return arr.reverse();
-	} else {
-		return arr;
-	}
-function deArray(arr){
-	var small = arr[0];
-	var big = arr[1];
-	var loHi = small +", "+big;
-	
-};
-return loHi;
+function sortArr(arr){
+	return takeOut(arr.sort());
+}
+function takeOut(arr) {
+	var min = arr[0];
+  var max = arr[1];
+  var outOut = min + ", " +max;
+  return outOut;
+}
+sortArr([5, 1]);
+
 
 // function leastCommonMultiple(min, max) {
 	
