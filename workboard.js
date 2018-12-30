@@ -39,10 +39,15 @@
 //     return multiple;
 // }
 
-var arr = [5, 1, 4, 9];
- arr.sort();
-var o = arr[0];
+function dropElements(arr){
+	
+	for(var i = 0; i < arr.length; i++){
+	if(arr.forEach(func)){
+		return "Don't include in new array";
+	}
+	return "Push into new array";
+}
 function myFunction() {
 
-document.getElementById("demo").innerHTML = o;
+document.getElementById("demo").innerHTML = dropElements([1, 2, 3], function(n) {return n < 3; });
 }
