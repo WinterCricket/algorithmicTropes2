@@ -39,15 +39,15 @@
 //     return multiple;
 // }
 
-function dropElements(arr){
+function dropElements(arr, func){
 	
-	for(var i = 0; i < arr.length; i++){
-	if(arr.forEach(func)){
-		return "Don't include in new array";
+	var bray = [];
+	if(arr.forEach(!func)){
+		return bray.push(n);
 	}
-	return "Push into new array";
+	return bray + "Empty";
 }
 function myFunction() {
 
-document.getElementById("demo").innerHTML = dropElements([1, 2, 3], function(n) {return n < 3; });
+document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4], function(n) {return n < 3; });
 }
