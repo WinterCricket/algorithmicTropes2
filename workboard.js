@@ -50,13 +50,18 @@
 
 // document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4], function(n) {return n < 3; });
 // }
-function stay(arr){
-	var sum = 0;
+function lookUp(arr){
+	var sum = [];
 for(var i = 0; i < arr.length; i++){
-	sum += arr[i];
+	var n = arr[i];
+	if(n > 4){
+		sum.push(n);
+	} else {
+	sum.push("");
+}
 }
 return sum;
 }
 function myFunction() {
-	document.getElementById("demo").innerHTML = stay([1, 2, 3]);
+	document.getElementById("demo").innerHTML = lookUp([1, 4, 5, 8]);
 }
