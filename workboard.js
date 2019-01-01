@@ -54,10 +54,10 @@ function lookUp(arr){
 	var sum = [];
 for(var i = 0; i < arr.length; i++){
 	var n = arr[i];
-	if(n > 4){
-		sum.push(n);
+	if(n < 4){
+		sum;
 	} else {
-	sum.push("");
+	sum.push(n);
 }
 }
 return sum;
