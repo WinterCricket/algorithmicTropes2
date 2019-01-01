@@ -39,15 +39,24 @@
 //     return multiple;
 // }
 
-function dropElements(arr, func){
+// function dropElements(arr, func){
 	
-	var bray = [];
-	if(arr.forEach(!func)){
-		return bray.push(n);
-	}
-	return bray + "Empty";
+	
+//  arr.forEach(n => {
+//   return n; });
+
+// }
+// function myFunction() {
+
+// document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4], function(n) {return n < 3; });
+// }
+function stay(arr){
+	var sum = 0;
+for(var i = 0; i < arr.length; i++){
+	sum += arr[i];
+}
+return sum;
 }
 function myFunction() {
-
-document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4], function(n) {return n < 3; });
+	document.getElementById("demo").innerHTML = stay([1, 2, 3]);
 }
