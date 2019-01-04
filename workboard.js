@@ -51,18 +51,35 @@
 // document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4], function(n) {return n < 3; });
 // }
 function dropElements(arr, func){
-	var sum = [];
 
-for(var i = 0; i < arr.length; i++){
+
+
+for(var i = 0; i < arr.length - 1; i++){
+	arr.reverse();
 	var n = arr[i];
 	if(func(n)){
-		sum.push(n);
-	} else {
-		sum;
+		arr;
+		break;
 	}
+	arr.pop();
 }
-return sum;
+return arr.reverse();
 }
+// function dropElements(arr, func){
+//     var sum = [];
+
+// for(var i = 0; i < arr.length; i++){
+//     var n = arr[i];
+//     if(func(n)){
+//         sum.push(n);
+//     } else {
+//         sum;
+//     }
+// }
+// return sum;
+// }
+
+
 function myFunction() {
-	document.getElementById("demo").innerHTML = dropElements([1, 2, 3, 4, 5], function(n) {return n >= 3; });
+	document.getElementById("demo").innerHTML = dropElements([5, 1, 2, 3], function(n) {return n === 1;});
 }
