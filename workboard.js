@@ -52,32 +52,13 @@
 // }
 function dropElements(arr, func){
 
-
-
-for(var i = 0; i < arr.length - 1; i++){
-	arr.reverse();
-	var n = arr[i];
-	if(func(n)){
-		arr;
-		break;
-	}
-	arr.pop();
+//arr[0] to keep the right position for inspection as it shift due to shift, not n
+while(!func(arr[0])){
+	arr.shift();
 }
-return arr.reverse();
+return arr;
 }
-// function dropElements(arr, func){
-//     var sum = [];
 
-// for(var i = 0; i < arr.length; i++){
-//     var n = arr[i];
-//     if(func(n)){
-//         sum.push(n);
-//     } else {
-//         sum;
-//     }
-// }
-// return sum;
-// }
 
 
 function myFunction() {
