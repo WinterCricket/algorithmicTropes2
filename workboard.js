@@ -12,11 +12,12 @@
 //  function myFunction(){
 // 	document.getElementById("demo").innerHTML = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 // }
+function checkObj (){
 var collection = [
 {"user": "Tinky-Winky", "sex": "male"}, 
 {"user": "Dipsy", "sex": "male"}, 
 {"user": "Laa-Laa", "sex": "female"}, 
-{"user": "Po", "tex": "female"}
+{"user": "Po", "sex": "female"}
 
 ]
 var filteredCollection = [];
@@ -25,7 +26,9 @@ for(var i = 0; i < collection.length; i++){
   	filteredCollection.push(collection[i]);
 
   }
-  return filteredCollection.length === collection.length;
+  var filLen = filteredCollection.length;
+  var colLen = collection.length;
 }
-
-document.getElementById("demo").innerHTML = filteredCollection;
+return filLen === colLen;
+}
+document.getElementById("demo").innerHTML = checkObj();
