@@ -1,23 +1,25 @@
 
 
 
-function truthCheck(collection, pre){
-var keysArray = collection.forEach(object => Object.entries(object));
-if(keysArray.every(pre)){
-	return true;
-}
-	return false;
-}
+var collection = [
+  {"user": "Tinky-Winky", "sex": "male"}, 
+  {"user": "Dipsy", "sex": "male"}, 
+  {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}
+];
 
- function myFunction(){
-	document.getElementById("demo").innerHTML = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
-}
+var pre = [];
 
-function reject(array, iteratorFunction) {
 
-    return array.filter(item => !array.filter(iteratorFunction).includes(item));
-
-}
+collection.filter(function(object){
+  pre.push("sex");
+	
+  
+});
+pre
+var snot = pre.length;
+snot
+var piss = collection.length;
+snot === piss
 
 // function myFunction(){
 // document.getElementById("demo").innerHTML = reject([1, 3, 6, 7, 11, 12, 13], function(item){return item % 2});
