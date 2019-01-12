@@ -25,5 +25,24 @@ snot === piss
 // document.getElementById("demo").innerHTML = reject([1, 3, 6, 7, 11, 12, 13], function(item){return item % 2});
 // }
 
+var cities = [
+  {city: "London", street: "Harley", rent: 3000, danger: 16},
+  {city: "Madrid", street: "Ferdinand", rent: 1200, danger: 12},
+  {city: "Portland", street: "Forest", rent: 920, danger: 9},
+  {city: "Marshall", street: "West Rusk", rent: 770, danger: 21}
+
+];
+//forEach
+var bestCity = [];
+cities.forEach(function(city){
+ return bestCity.push(city.street +" is a sexy becky");
+  
+});
+bestCity
+//filter
+var bestCities = cities.filter(function(city){
+  return city.rent < 1500 && city.danger < 16; 
+});
+bestCities
 
 
