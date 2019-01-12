@@ -45,7 +45,7 @@ var bestCities = cities.filter(function(city){
 });
 bestCities
 
-//find method using function
+//find method using functions
 function Car(model){
 	this.model = model;
 }
@@ -60,4 +60,20 @@ cars.find(function(car){
 	return car.model === 'Justy';
 });
 
+//find using a function and Object.key();
+
+var ladders = [
+  {id: 1, height: 20},
+  {id: 3, height: 25}
+];
+
+
+
+function findWhere(array, criteria) {
+  return array.find(function(el) {
+    var property = Object.keys(criteria)[0];
+      return el[property] === criteria[property];
+  })
+}
+findWhere(ladders, {height: 25});
 
