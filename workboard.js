@@ -45,4 +45,19 @@ var bestCities = cities.filter(function(city){
 });
 bestCities
 
+//find method using function
+function Car(model){
+	this.model = model;
+}
+
+var cars = [
+	new Car('Ferrari'),
+  new Car('Camry'),
+  new Car('Justy')
+];
+
+cars.find(function(car){
+	return car.model === 'Justy';
+});
+
 
