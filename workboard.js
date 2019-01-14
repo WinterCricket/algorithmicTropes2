@@ -13,7 +13,7 @@ var pre = [];
 collection.filter(function(object){
 	pre.push("sex");
 	
-	
+
 });
 pre
 var snot = pre.length;
@@ -36,7 +36,7 @@ var cities = [
 var bestCity = [];
 cities.forEach(function(city){
 	return bestCity.push(city.street +" is a sexy becky");
-	
+
 });
 bestCity
 //filter
@@ -105,3 +105,27 @@ function balancedParens(string){
 }
 balancedParens("((()())");
 
+//working on a reduce algo
+var desks = [
+  { type: 'sitting' },
+  { type: 'standing' },
+  { type: 'sitting' },
+  { type: 'sitting' },
+  { type: 'standing' }
+];
+
+desks.reduce(function(sitting, desk) {
+  if(desk.type === 'sitting'){return sitting + 1;}
+  return sitting 
+	
+ 
+}, 0);
+
+desks.reduce(function(standing, desk){
+	if(desk.type === 'standing'){
+  	return standing + 1;
+  }
+  return standing;
+}, 0);
+//ending should go }, {sitting: 0, standing: 0}}
+//seem to turn the values into keys of new resulting object with number values
