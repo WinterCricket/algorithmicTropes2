@@ -73,7 +73,21 @@ function findWhere(array, criteria) {
   return array.find(function(el) {
     var property = Object.keys(criteria)[0];
       return el[property] === criteria[property];
-  })
+  });
 }
-findWhere(ladders, {height: 25});
+function myFunction(){
+	document.getElementById("demo").innerHTML = findWhere(ladders, {height: 25});
+} 
+
+//reduce 
+var primaryColors = [
+  {color: "red"},
+  {color: "yellow"},
+  {color: "blue"}
+];
+
+primaryColors.reduce(function(prev, primeColor){
+               prev.push(primeColor.color);
+               return prev;
+               }, []);
 
