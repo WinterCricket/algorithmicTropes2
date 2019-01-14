@@ -91,3 +91,16 @@ primaryColors.reduce(function(prev, primeColor){
                return prev;
                }, []);
 
+//another example of reduce
+
+function balancedParens(string){
+	return !string.split("").reduce(function(prev, char){
+  if(char === "("){return ++prev}
+  if(char === ")"){return --prev}
+    return prev;
+  }, 0);
+
+
+}
+balancedParens("((()())");
+
