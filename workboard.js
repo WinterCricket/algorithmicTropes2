@@ -114,18 +114,20 @@ var desks = [
   { type: 'standing' }
 ];
 
-desks.reduce(function(sitting, desk) {
+var sit = desks.reduce(function(sitting, desk) {
   if(desk.type === 'sitting'){return sitting + 1;}
   return sitting 
 	
  
 }, 0);
 
-desks.reduce(function(standing, desk){
+var stand = desks.reduce(function(standing, desk){
 	if(desk.type === 'standing'){
   	return standing + 1;
   }
   return standing;
 }, 0);
+sit
+stand
 //ending should go }, {sitting: 0, standing: 0}}
 //seem to turn the values into keys of new resulting object with number values
