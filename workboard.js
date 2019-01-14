@@ -2,18 +2,18 @@
 
 
 var collection = [
-  {"user": "Tinky-Winky", "sex": "male"}, 
-  {"user": "Dipsy", "sex": "male"}, 
-  {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}
+{"user": "Tinky-Winky", "sex": "male"}, 
+{"user": "Dipsy", "sex": "male"}, 
+{"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}
 ];
 
 var pre = [];
 
 
 collection.filter(function(object){
-  pre.push("sex");
+	pre.push("sex");
 	
-  
+	
 });
 pre
 var snot = pre.length;
@@ -26,22 +26,22 @@ snot === piss
 // }
 
 var cities = [
-  {city: "London", street: "Harley", rent: 3000, danger: 16},
-  {city: "Madrid", street: "Ferdinand", rent: 1200, danger: 12},
-  {city: "Portland", street: "Forest", rent: 920, danger: 9},
-  {city: "Marshall", street: "West Rusk", rent: 770, danger: 21}
+{city: "London", street: "Harley", rent: 3000, danger: 16},
+{city: "Madrid", street: "Ferdinand", rent: 1200, danger: 12},
+{city: "Portland", street: "Forest", rent: 920, danger: 9},
+{city: "Marshall", street: "West Rusk", rent: 770, danger: 21}
 
 ];
 //forEach
 var bestCity = [];
 cities.forEach(function(city){
- return bestCity.push(city.street +" is a sexy becky");
-  
+	return bestCity.push(city.street +" is a sexy becky");
+	
 });
 bestCity
 //filter
 var bestCities = cities.filter(function(city){
-  return city.rent < 1500 && city.danger < 16; 
+	return city.rent < 1500 && city.danger < 16; 
 });
 bestCities
 
@@ -51,9 +51,9 @@ function Car(model){
 }
 
 var cars = [
-	new Car('Ferrari'),
-  new Car('Camry'),
-  new Car('Justy')
+new Car('Ferrari'),
+new Car('Camry'),
+new Car('Justy')
 ];
 
 cars.find(function(car){
@@ -63,17 +63,17 @@ cars.find(function(car){
 //find using a function and Object.key();
 
 var ladders = [
-  {id: 1, height: 20},
-  {id: 3, height: 25}
+{id: 1, height: 20},
+{id: 3, height: 25}
 ];
 
 
 
 function findWhere(array, criteria) {
-  return array.find(function(el) {
-    var property = Object.keys(criteria)[0];
-      return el[property] === criteria[property];
-  });
+	return array.find(function(el) {
+		var property = Object.keys(criteria)[0];
+		return el[property] === criteria[property];
+	});
 }
 function myFunction(){
 	document.getElementById("demo").innerHTML = findWhere(ladders, {height: 25});
@@ -81,24 +81,25 @@ function myFunction(){
 
 //reduce 
 var primaryColors = [
-  {color: "red"},
-  {color: "yellow"},
-  {color: "blue"}
+{color: "red"},
+{color: "yellow"},
+{color: "blue"}
 ];
 
 primaryColors.reduce(function(prev, primeColor){
-               prev.push(primeColor.color);
-               return prev;
-               }, []);
+	prev.push(primeColor.color);
+	return prev;
+}, []);
 
 //another example of reduce
 
 function balancedParens(string){
 	return !string.split("").reduce(function(prev, char){
-  if(char === "("){return ++prev}
-  if(char === ")"){return --prev}
-    return prev;
-  }, 0);
+		if(prev < 0){return prev}
+			if(char === "("){return ++prev}
+				if(char === ")"){return --prev}
+					return prev;
+			}, 0);
 
 
 }
