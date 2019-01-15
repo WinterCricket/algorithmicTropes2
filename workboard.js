@@ -131,3 +131,19 @@ sit
 stand
 //ending should go }, {sitting: 0, standing: 0}}
 //seem to turn the values into keys of new resulting object with number values
+
+//a reduce function to create an object of counted string elements
+function countString(str){
+var result = {};
+  for(var i = 0; i < str.length; i++){
+  var char = str[i].toLowerCase();
+  if(result[char] > 0){
+  	result[char]++
+  }else {
+  	result[char] = 1;
+  };
+   
+  }
+  return result;
+}
+countString("Lemon wood under winter light. Nothing like a highlight moon machine to start us of again.");
