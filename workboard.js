@@ -149,17 +149,17 @@ var result = {};
 countString("Lemon wood under winter light. Nothing like a highlight moon machine to start us of again.");
 
 
-//char counter into an object (key value pairs)
+//char counter into an object (key value pairs), now using reduce
 
 var str = "This is the sausage of I saw such!";
 var chars = str.toLowerCase().split("");
-var lettersCount = {};
-for(var i = 0; i < chars.length; i++){
-  if(lettersCount[chars[i]] == undefined) 
-    lettersCount[chars[i]] = 0;
-	lettersCount[chars[i]]++;
-}
-for(var i in lettersCount)
-{
-  lettersCount
-}
+
+
+chars.reduce(function(acc, char){
+	if(!acc[char]){
+   acc[char]= 1; 
+  } else {
+  acc[char] = acc[char]+1;
+  }
+  return acc;
+}, {});
