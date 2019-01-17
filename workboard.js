@@ -164,7 +164,7 @@ countString("Lemon wood under winter light. Nothing like a highlight moon machin
 //   return acc;
 // }, {});
 
-//perhaps try Object.values()
+//perhaps try to learn simple accumulation with reduce!
 var desks = [
   { type: 'sitting' },
   { type: 'standing' },
@@ -172,13 +172,13 @@ var desks = [
   { type: 'sitting' },
   { type: 'standing' }
 ];
-
 var deskTypes = desks.reduce(function(acc, desk) {
-    if(!acc[desk.type]){
-    acc[desk.type] = 1;
-    }else {
-      acc[desk.type] = acc[desk.type]+1;
-  }
-}, {} );
-
+    if(desk.type === "sitting") {
+        acc.sitting++
+    } if(desk.type === "standing") {
+        acc.standing++
+    }
+    return acc;
+    
+}, { sitting: 0, standing: 0 });
 deskTypes
