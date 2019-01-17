@@ -182,3 +182,15 @@ var deskTypes = desks.reduce(function(acc, desk) {
     
 }, { sitting: 0, standing: 0 });
 deskTypes
+
+
+//remove redundant elements from array
+function unique(array) {
+  
+
+	
+  	return [...new Set(array)];
+  
+
+}
+unique([1,1,3,4,4,4,5,7,7]);//[1,3,4,5,7]
