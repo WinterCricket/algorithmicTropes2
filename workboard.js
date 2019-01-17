@@ -151,15 +151,34 @@ countString("Lemon wood under winter light. Nothing like a highlight moon machin
 
 //char counter into an object (key value pairs), now using reduce
 
-var str = "This is the sausage of I saw such!";
-var chars = str.toLowerCase().split("");
+// var str = "This is the sausage of I saw such!";
+// var chars = str.toLowerCase().split("");
 
 
-chars.reduce(function(acc, char){
-	if(!acc[char]){
-   acc[char]= 1; 
-  } else {
-  acc[char] = acc[char]+1;
+// chars.reduce(function(acc, char){
+// 	if(!acc[char]){
+//    acc[char]= 1; 
+//   } else {
+//   acc[char] = acc[char]+1;
+//   }
+//   return acc;
+// }, {});
+
+//perhaps try Object.values()
+var desks = [
+  { type: 'sitting' },
+  { type: 'standing' },
+  { type: 'sitting' },
+  { type: 'sitting' },
+  { type: 'standing' }
+];
+
+var deskTypes = desks.reduce(function(acc, desk) {
+    if(!acc[desk.type]){
+    acc[desk.type] = 1;
+    }else {
+      acc[desk.type] = acc[desk.type]+1;
   }
-  return acc;
-}, {});
+}, {} );
+
+deskTypes
