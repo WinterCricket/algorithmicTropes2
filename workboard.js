@@ -194,3 +194,19 @@ function unique(array) {
 
 }
 unique([1,1,3,4,4,4,5,7,7]);//[1,3,4,5,7]
+//longer version, using reduce
+
+function unique(array) {
+  
+
+
+  	return array.reduce(function(acc, curr){
+    if(acc.indexOf(curr) == -1){
+    	acc.push(curr);
+    }
+      return acc;
+    }, []);
+  
+
+}
+unique(["the", "fat", "the", "old", "fat", "woman"]);
