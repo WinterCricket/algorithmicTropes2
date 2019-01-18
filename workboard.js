@@ -196,9 +196,9 @@ function unique(array) {
 unique([1,1,3,4,4,4,5,7,7]);//[1,3,4,5,7]
 //longer version, using reduce
 
-function unique(array) {
+function unique(origin) {
   
-
+var array = origin.split(" ");
 
   	return array.reduce(function(acc, curr){
     if(acc.indexOf(curr) == -1){
@@ -209,4 +209,4 @@ function unique(array) {
   
 
 }
-unique(["the", "fat", "the", "old", "fat", "woman"]);
+unique("All of the free movies found on this website are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.");
