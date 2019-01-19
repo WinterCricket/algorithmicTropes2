@@ -221,3 +221,28 @@ unique("Who would have thought the Ivory Coast would lead to this tragedy and ho
 
 //fat arrow and fibonacci
 const fibonacci = n =>(n < 3) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+
+//create bookshop using enhanced object literals
+function createBookshop(inventory){
+	return {
+  	inventory,
+    inventoryValue: function(){
+    },
+    priceForTitle: function(title){
+    return 
+    }
+  };
+}
+
+const inventory = [
+  { 
+    title: 'Loser Escapade', 
+    price: 22 
+  }, 
+  { 
+    title: 'Salmonskin Sneakers', 
+    price: 14 
+  }
+];
+
+const bookshop = createBookshop(inventory);
