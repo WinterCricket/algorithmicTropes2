@@ -223,13 +223,14 @@ unique("Who would have thought the Ivory Coast would lead to this tragedy and ho
 const fibonacci = n =>(n < 3) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
 
 //create bookshop using enhanced object literals
+//create bookshop using enhanced object literals
 function createBookshop(inventory){
 	return {
   	inventory,
-    inventoryValue: function(){
+    inventoryValue(){
       return inventory.reduce((total, book) => total + book.price, 0);
     },
-    priceForTitle: function(title){
+    priceForTitle(title){
     return this.inventory.find(book => book.title === title).price;
     }
   };
