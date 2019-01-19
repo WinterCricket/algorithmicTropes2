@@ -227,9 +227,10 @@ function createBookshop(inventory){
 	return {
   	inventory,
     inventoryValue: function(){
+      return inventory.reduce((total, book) => total + book.price, 0);
     },
     priceForTitle: function(title){
-    return 
+    return this.inventory.find(book => book.title === title).price;
     }
   };
 }
@@ -246,3 +247,4 @@ const inventory = [
 ];
 
 const bookshop = createBookshop(inventory);
+bookshop.inventoryValue();
