@@ -210,3 +210,14 @@ var array = origin.split(" ");
 
 }
 unique("All of the free movies found on this website are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.");
+// using the ...new Set
+
+function unique(origin) {
+  var array = origin.split(" ");
+var edited = [...new Set(array)];
+return edited.join(" ");
+}
+unique("Who would have thought the Ivory Coast would lead to this tragedy and horror in a small town in a small East Texas city?");
+
+//fat arrow and fibonacci
+const fibonacci = n =>(n < 3) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
