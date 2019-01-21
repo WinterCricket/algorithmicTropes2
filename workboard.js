@@ -249,3 +249,20 @@ const inventory = [
 
 const bookshop = createBookshop(inventory);
 bookshop.inventoryValue();
+//es6 default cases
+
+function User(id){
+this.id = id;
+}
+
+function generateId(){
+return Math.random()* 99999;
+  
+}
+
+function createAdminUser(user  ){
+	user.admin = true;
+  return user;
+}
+
+createAdminUser(new User(generateId()));
