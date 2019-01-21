@@ -260,9 +260,9 @@ return Math.random()* 99999;
   
 }
 
-function createAdminUser(user  ){
+function createAdminUser(user = new User(generateId())  ){
 	user.admin = true;
   return user;
 }
 
-createAdminUser(new User(generateId()));
+createAdminUser();
