@@ -265,4 +265,6 @@ function createAdminUser(user = new User(generateId())  ){
   return user;
 }
 
+const user = createAdminUser(new User(generatedId()));
+
 createAdminUser();
