@@ -268,3 +268,34 @@ function createAdminUser(user = new User(generateId())  ){
 const user = createAdminUser(new User(generatedId()));
 
 createAdminUser();
+
+
+
+//algo if every object has property/key pre parameter
+
+function truthCheck(collection = "defaulted", pre = "defaulted") {
+  // Is everyone being true?
+  
+  collection.every(function(person){
+  	if(!person.pre){
+    	return false;
+    }else {
+      return true;
+     }
+    return 
+  });
+  
+truthCheck(
+  [
+  {"user": "Tinky-Winky", "sex": "male"}, 
+  {"user": "Dipsy", "sex": "male"}, 
+  {"user": "Laa-Laa", "sex": "female"}, 
+  {"user": "Po", "sex": "female"}], 
+           "sex"
+);
+
+//use some es2015
+function truthCheck(collection = "defaulted", pre = "defaulted") {
+	return collection.every(person => person === person.pre);
+}
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
