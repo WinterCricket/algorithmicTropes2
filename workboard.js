@@ -309,3 +309,16 @@ function truthCheck(collection = "defaulted", pre = "defaulted") {
 }
   
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+//rest and spread
+
+function validateShoppingList(...items){
+
+if( items.indexOf("milk, eggs"< 0)){
+      return "milk, eggs,"+items;
+      }
+      else {
+    return items;
+    }
+}
+validateShoppingList(" muffins", " index cards", " apples", " cheese")
