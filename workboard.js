@@ -322,3 +322,20 @@ if( items.indexOf("milk, eggs"< 0)){
     }
 }
 validateShoppingList(" muffins", " index cards", " apples", " cheese")
+//refactor for a 
+function product(...numbers) {
+
+  
+  return numbers.reduce((acc, number)=>  acc * number, 1);
+}
+product(3,5,7)
+
+//destructuring
+
+const Expense = {
+type: "Creative Writing",
+amount: "$3440 usd"
+
+};
+const {type, amount} = Expense;
+type
