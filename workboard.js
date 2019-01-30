@@ -358,3 +358,12 @@ for(let i = 1; i <= 100; i++){
 
 }
 fizzBuzz();
+//the mirror using for loop—creating a palindrome(made this up on my ownsome)
+function reverse(str) {
+   const arr = str.split("");
+   for(let i = str.length; i > -1; i--){
+    arr.push(str[i]);
+   }
+   return arr.join("");
+}
+reverse("The goat lives in the well")
