@@ -385,4 +385,11 @@ function reverse(str) {
    }
   return reversed;
 }
-reverse("The goat lives in the well")
+reverse("The goat lives in the well");
+
+//reversal with reduce and es2015
+function reverse(str){
+
+return str.split("").reduce((rev, char)=> char + rev, "");
+}
+reverse("beetle shit");
