@@ -367,3 +367,13 @@ function reverse(str) {
    return arr.join("");
 }
 reverse("The goat lives in the well")
+//straight reversal
+function reverse(str) {
+   let arr = [];
+   for(let i = str.length; i > -1; i--){
+    
+     arr.push(str[i]);
+   }
+   return arr.join("");
+}
+
