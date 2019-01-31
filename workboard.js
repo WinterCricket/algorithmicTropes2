@@ -419,3 +419,12 @@ function fileSummary({extension, name, size}){
   return `This file ${name}.${extension} uses ${size} bytes of memory.`;
 }
 fileSummary(savedFile);
+//destructuring elements from arrays
+const companies = [
+  "Shoe Stores",
+  "Google",
+  "Uber Devil Drive"
+];
+const [one, ...rest] = companies;//output below
+// Shoe Stores
+// ["Google","Uber Devil Drive"]
