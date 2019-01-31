@@ -402,3 +402,11 @@ locations: ["Mountain View", "New York", "London"]
 const {locations: [,location]} = Google;
 
 location//New York
+//simple destructuring of obj
+const expense = {
+  type: "Artistic",
+  amount: "$55 USD"
+};
+
+const {type, amount} = expense;
+
