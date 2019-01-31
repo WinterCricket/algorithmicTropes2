@@ -409,4 +409,13 @@ const expense = {
 };
 
 const {type, amount} = expense;
-
+//destructuring properties in obj in function
+const savedFile = {
+  extension:"jpg",
+  name: "repost",
+  size: 45000
+};
+function fileSummary({extension, name, size}){
+  return `This file ${name}.${extension} uses ${size} bytes of memory.`;
+}
+fileSummary(savedFile);
