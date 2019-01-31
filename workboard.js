@@ -393,3 +393,12 @@ function reverse(str){
 return str.split("").reduce((rev, char)=> char + rev, "");
 }
 reverse("beetle shit");
+
+//destructuring stuff
+const Google = {
+locations: ["Mountain View", "New York", "London"]
+};
+
+const {locations: [,location]} = Google;
+
+location//New York
