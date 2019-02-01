@@ -489,3 +489,9 @@ function palindrome(str){
   });
 }
 palindrome("eye");
+//reverse int
+function reverseInt(n){
+  n = n + "";//or any other method for converting int to str
+  return n.split("").reverse().join("");
+}
+reverseInt(123);
