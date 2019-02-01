@@ -475,3 +475,17 @@ const revStr = str.split("").reduce((rev, char)=> char + rev, "");
   return str === revStr
 }
 palindrome("a man. a plan. A canal. Panama!");
+//verbatim palindrome using reverse()
+function palindrome(str){
+  const revStr = str.split("").reverse().join("");
+  return str === revStr;
+}
+palindrome("livevil");
+
+//palindrome using every()
+function palindrome(str){
+  return str.split("").every((char, i)=> {
+      return char === str[str.length - i - 1];
+  });
+}
+palindrome("eye");
