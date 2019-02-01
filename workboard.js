@@ -495,3 +495,10 @@ function reverseInt(n){
   return n.split("").reverse().join("");
 }
 reverseInt(123);
+//reverse int with regard to sign and value
+function reverseInt(n){
+ 
+  const reversed = n.toString().split("").reverse().join("");
+  return Math.sign(n) * parseInt(reversed);
+}
+reverseInt(-120);//-21
