@@ -461,3 +461,9 @@ function palindrome(str) {
   return reverseStr === lowRegStr;
 }
 palindrome("A man, a plan, a canal. Panama");
+//verbatim palindrome using reduce
+function palindrome(str){
+
+const revStr = str.split("").reduce((rev, char)=> char + rev, "");
+  return str === revStr
+} 
