@@ -467,3 +467,11 @@ function palindrome(str){
 const revStr = str.split("").reduce((rev, char)=> char + rev, "");
   return str === revStr
 } 
+//correcting kind of palindrome using reduce
+function palindrome(str){
+  const res = /[^A-Za-z09]/g;
+str = str.toLowerCase().replace(res, "");
+const revStr = str.split("").reduce((rev, char)=> char + rev, "");
+  return str === revStr
+}
+palindrome("a man. a plan. A canal. Panama!");
