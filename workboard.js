@@ -513,8 +513,13 @@ const chars = {};
 //     chars[char]++
 //   }
 // }
-
-for(let char of stirng){
+//maxChar finding the largest valued char in object
+function maxChar(str){
+const chars = {};
+for(let char of str){
   chars[char] = chars[char] +1 || 1;
 }
-chars//lists each letter once and the number of times each occurs in string
+
+return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
+}
+maxChar("abbbaaaacccbbbb");
