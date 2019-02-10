@@ -1,6 +1,5 @@
 
-
-
+//https://stephengrider.github.io/JSPlaygrounds/
 var collection = [
 {"user": "Tinky-Winky", "sex": "male"}, 
 {"user": "Dipsy", "sex": "male"}, 
@@ -502,3 +501,16 @@ function reverseInt(n){
   return Math.sign(n) * parseInt(reversed);
 }
 reverseInt(-120);//-21
+
+//charMax
+const string = "This isn't what you thought your mother wanted you to do.";
+const chars = {};
+
+for(let char of string){
+  if(!chars[char]){
+    chars[char] =1;
+  } else {
+    chars[char]++
+  }
+}
+chars//lists each letter once and the number of times each occurs in string
