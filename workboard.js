@@ -506,11 +506,15 @@ reverseInt(-120);//-21
 const string = "This isn't what you thought your mother wanted you to do.";
 const chars = {};
 
-for(let char of string){
-  if(!chars[char]){
-    chars[char] =1;
-  } else {
-    chars[char]++
-  }
+// for(let char of string){
+//   if(!chars[char]){
+//     chars[char] =1;
+//   } else {
+//     chars[char]++
+//   }
+// }
+
+for(let char of stirng){
+  chars[char] = chars[char] +1 || 1;
 }
 chars//lists each letter once and the number of times each occurs in string
