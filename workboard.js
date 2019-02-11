@@ -523,3 +523,26 @@ for(let char of str){
 return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
 }
 maxChar("abbbaaaacccbbbb");
+
+//maxChar using for/in 
+function maxChar(str){
+  const charMap = {};
+  let max = 0;
+ let maxChar = "";
+  for(let char of str){
+    if(charMap[char]){
+       charMap[char]++;
+    }else {
+       charMap[char] = 1;
+    }
+  
+  }
+  for(let char in charMap){
+    if(charMap[char] > max){
+    max = charMap[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+}
+maxChar("Listen to thistles at night")
