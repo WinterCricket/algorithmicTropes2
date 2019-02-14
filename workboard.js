@@ -589,3 +589,14 @@ return array.map( function(e,i){
 }
 
 chunk([1,2,3,4,5,6,7,8,9,0], 3);
+//chunked with slice
+function chunk(array, size) {
+  const chunked = [];
+  let index = 0;
+  while(index < array.length){
+    chunked.push(array.slice(index, index + size));
+    index += size;
+  }
+  return chunked;
+}
+chunk([1,2,3,4,5,6,7,8,7,6,5,4], 3);
