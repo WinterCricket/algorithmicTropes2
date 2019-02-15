@@ -603,17 +603,34 @@
 // document.getElementById("demo").innerHTML = chunk([1,2,3,4,5,6,7,8,7,6,5,4], 3);
 // }
 //anagrams
-function anagram(stringA, stringB){
-const R = /[^\w]/g;
-const str1 = stringA.toLowerCase().replace(R,'').split('').sort().join('').trim();
-const str2 = stringB.toLowerCase().replace(R,'').split('').sort().join('').trim();
+// function anagram(stringA, stringB){
+// const R = /[^\w]/g;
+// const str1 = stringA.toLowerCase().replace(R,'').split('').sort().join('').trim();
+// const str2 = stringB.toLowerCase().replace(R,'').split('').sort().join('').trim();
 
-if (str1 === str2) {
-     return true;
-} else {
-   return false;
+// if (str1 === str2) {
+//      return true;
+// } else {
+//    return false;
+// }
+// }
+// function myFunction(){
+// document.getElementById("demo").innerHTML = anagram("flowing!", "wolf gin");
+// }
+//anagrams trying to use object mapping
+function objectify(str){
+
+  let object = {};
+  const restr = str.toLowerCase().replace(/[^\w]/g, "").trim();
+  for(let el of restr){
+    if(object[el]){
+      object[el]++
+    } else {
+      object[el] = 1;
+    }
+    
+  } 
+return object;
 }
-}
-function myFunction(){
-document.getElementById("demo").innerHTML = anagram("flowing!", "wolf gin");
-}
+
+document.getElementById("demo").innerHTML = objectify("This can make up an object with key value pairs.");
