@@ -604,7 +604,7 @@
 // }
 //anagrams
 function anagram(stringA, stringB){
-const R = /[^a-z\d]/g;
+const R = /[^\w]/g;
 const str1 = stringA.toLowerCase().replace(R,'').split('').sort().join('').trim();
 const str2 = stringB.toLowerCase().replace(R,'').split('').sort().join('').trim();
 
@@ -614,5 +614,6 @@ if (str1 === str2) {
    return false;
 }
 }
-anagram("flowing!", "wolf gin");
-
+function myFunction(){
+document.getElementById("demo").innerHTML = anagram("flowing!", "wolf gin");
+}
