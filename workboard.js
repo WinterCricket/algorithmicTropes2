@@ -633,4 +633,4 @@ function objectify(str){
 return object;
 }
 
-document.getElementById("demo").innerHTML = objectify("This can make up an object with key value pairs.");
+objectify("This can make up an object with key value pairs.");
