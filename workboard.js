@@ -618,19 +618,28 @@
 // document.getElementById("demo").innerHTML = anagram("flowing!", "wolf gin");
 // }
 //anagrams trying to use object mapping
-function objectify(str){
+// function objectify(str){
 
-  let object = {};
-  const restr = str.toLowerCase().replace(/[^\w]/g, "").trim();
-  for(let el of restr){
-    if(object[el]){
-      object[el]++
-    } else {
-      object[el] = 1;
-    }
+//   let object = {};
+//   const restr = str.toLowerCase().replace(/[^\w]/g, "").trim();
+//   for(let el of restr){
+//     if(object[el]){
+//       object[el]++
+//     } else {
+//       object[el] = 1;
+//     }
     
-  } 
-return object;
+//   } 
+// return object;
+// }
+
+// objectify("This can make up an object with key value pairs.");
+//anagram using helper function
+function anagrams(stringA, stringB) {
+  return cleanString(stringA)===cleanString(stringB);
 }
 
-objectify("This can make up an object with key value pairs.");
+function cleanString(str){
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+}
+anagrams("Nicest", "incest?");
