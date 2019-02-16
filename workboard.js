@@ -635,11 +635,24 @@
 
 // objectify("This can make up an object with key value pairs.");
 //anagram using helper function
-function anagrams(stringA, stringB) {
-  return cleanString(stringA)===cleanString(stringB);
+// function anagrams(stringA, stringB) {
+//   return cleanString(stringA)===cleanString(stringB);
+// }
+
+// function cleanString(str){
+//   return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+// }
+// anagrams("Nicest", "incest?");
+// if seperate strings are palindrome
+function isPalindrome(strA, strB){
+	return cleanStr(strA) === cleanStr(strB).split("").reverse().join("");
 }
 
-function cleanString(str){
-  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+function cleanStr(str){
+	const re = /[^\w]/g;
+	return str.toLowerCase().replace(re, "");
 }
-anagrams("Nicest", "incest?");
+
+function myFunction(){
+	document.getElementById("demo").innerHTML = isPalindrome("8God flow 4!", "4 wolf-dog? 8");
+}
