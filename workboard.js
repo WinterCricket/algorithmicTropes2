@@ -644,15 +644,58 @@
 // }
 // anagrams("Nicest", "incest?");
 // if seperate strings are palindrome
-function isPalindrome(strA, strB){
-	return cleanStr(strA) === cleanStr(strB).split("").reverse().join("");
-}
+// function isPalindrome(strA, strB){
+// 	return cleanStr(strA) === cleanStr(strB).split("").reverse().join("");
+// }
 
-function cleanStr(str){
-	const re = /[^\w]/g;
-	return str.toLowerCase().replace(re, "");
-}
+// function cleanStr(str){
+// 	const re = /[^\w]/g;
+// 	return str.toLowerCase().replace(re, "");
+// }
 
-function myFunction(){
-	document.getElementById("demo").innerHTML = isPalindrome("8God flow 4!", "4 wolf-dog? 8");
+// function myFunction(){
+// 	document.getElementById("demo").innerHTML = isPalindrome("8God flow 4!", "4 wolf-dog? 8");
+// }
+// const str = "this is where the dog sings";
+// const firstLetter = 
+// str.split(" ")[0].split("")[0].toUpperCase().;
+// function myFunction(){
+// document.getElementById("demo").innerHTML = capitalize("the long dog shadow flew");
+// }
+
+// const str = "this is where the dog sings";
+// const words = str.split(" ");
+// const word = words[0].split("");
+
+
+// const capLetter = word[0].toUpperCase();
+
+
+
+// const str = "this is where the dog sings";
+// const bucket = [];
+// const arrayOfWords = str.split(" ");
+
+// for (let word of arrayOfWords){
+// 	word+=1;
+// }
+// const letters = arrayOfWords[word].split("")[0].toUpperCasse().join("");
+
+
+
+function capitalize(str){
+for(let i = 0; i < arrWords.length; i++){
+	i += 1;
 }
+const arrWords = str.split(" ");
+  const word = arrWords[i];
+  const oldLet = arrWords[i][0];
+  const cap = arrWords[i][0].toUpperCase();
+  return word.replace(oldLet, cap);
+  
+}
+document.getElementById("demo").innerHTML = capitalize("the sore neck of the library screams");
+
+// const letter = word[0];
+// const capLetter = word[0].toUpperCase();
+// bucket.push(replace(capLetter, letter));
