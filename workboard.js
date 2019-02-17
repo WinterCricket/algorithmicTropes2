@@ -683,19 +683,31 @@
 
 
 
-function capitalize(str){
-for(let i = 0; i < arrWords.length; i++){
-	i += 1;
-}
-const arrWords = str.split(" ");
-  const word = arrWords[i];
-  const oldLet = arrWords[i][0];
-  const cap = arrWords[i][0].toUpperCase();
-  return word.replace(oldLet, cap);
+// function capitalize(str){
+// for(let i = 0; i < arrWords.length; i++){
+// 	i += 1;
+// }
+// const arrWords = str.split(" ");
+//   const word = arrWords[i];
+//   const oldLet = word[0];
+//   const cap = word[0].toUpperCase();
+//    return word.replace(oldLet, cap).join();
   
-}
-document.getElementById("demo").innerHTML = capitalize("the sore neck of the library screams");
+// }
+//  capitalize("the sore neck of the library screams");
 
 // const letter = word[0];
 // const capLetter = word[0].toUpperCase();
 // bucket.push(replace(capLetter, letter));
+function capitalize(str){
+	const words = [];
+
+	for(let word of str.split(" ")){
+		words.push(word[0].toUpperCase() + word.slice(1));
+	}
+	return words.join(" ");
+}
+
+function myFunction(){
+	document.getElementById("demo").innerHTML = capitalize("look, the small crab of the Lordly crabtree!");
+}
