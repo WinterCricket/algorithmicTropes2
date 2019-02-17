@@ -505,7 +505,6 @@
 // //charMax
 // const string = "This isn't what you thought your mother wanted you to do.";
 // const chars = {};
-
 // // for(let char of string){
 // //   if(!chars[char]){
 // //     chars[char] =1;
@@ -513,16 +512,17 @@
 // //     chars[char]++
 // //   }
 // // }
-// //maxChar finding the largest valued char in object
-// function maxChar(str){
-// const chars = {};
-// for(let char of str){
-//   chars[char] = chars[char] +1 || 1;
-// }
 
-// return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
-// }
-// maxChar("abbbaaaacccbbbb");
+// //maxChar finding the largest valued char in object
+function maxChar(str){
+const chars = {};
+for(let char of str){
+  chars[char] = chars[char] +1 || 1;
+}
+
+return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
+}
+maxChar("abbbaaaacccbbbb");
 
 // //maxChar using for/in 
 // function maxChar(str){
@@ -711,3 +711,28 @@ function capitalize(str){
 function myFunction(){
 	document.getElementById("demo").innerHTML = capitalize("look, the small crab of the Lordly crabtree!");
 }
+//maxChar
+function maxChar(str){
+const chars = {};
+const re = /[^\w]/g;
+for(let char of str.replace(re, "").toLowerCase()){
+  chars[char] = chars[char] +1 || 1;
+}
+
+return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
+}
+maxChar("Nothing was as wonderful as her...her smile. And email.");
+//objectify
+function objectify(str){
+	const chars = {};
+	for(let char of str){
+		if(chars[char]){
+			chars[char]++;
+		}else{
+			chars[char] = 1;
+		}
+
+	}
+	return chars;
+}
+objectify("Any string will do, for now.");
