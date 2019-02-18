@@ -738,15 +738,16 @@
 // objectify("Any string will do, for now.");
 //mostFrequentWords
 function mostFrequentWords (string){
+ 
 	const words = {};
-	for(let word of toWords(string)){
+	for(let word of string.split(" ")){
 		words[word] = words[word] + 1 || 1;
 	}
-	return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
+	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
+ 
 }
-function toWords(str){
-	const re = /[^\w]/g;
-	return str.splite(" ").replace(re, "").toLowerCase();
-}
-function myFunction(){
-	document.getElementById("demo").innerHTML = mostFrequentWords("He studied Tarantino films for their subtext.");
+ 
+ 	document.getElementById("demo").innerHTML = mostFrequentWords("He studied for he Tarantino films for he their");
+ 
+
+	
