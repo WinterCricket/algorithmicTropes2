@@ -514,15 +514,15 @@
 // // }
 
 // //maxChar finding the largest valued char in object
-function maxChar(str){
-const chars = {};
-for(let char of str){
-  chars[char] = chars[char] +1 || 1;
-}
+// function maxChar(str){
+// const chars = {};
+// for(let char of str){
+//   chars[char] = chars[char] +1 || 1;
+// }
 
-return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
-}
-maxChar("abbbaaaacccbbbb");
+// return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
+// }
+// maxChar("abbbaaaacccbbbb");
 
 // //maxChar using for/in 
 // function maxChar(str){
@@ -699,40 +699,54 @@ maxChar("abbbaaaacccbbbb");
 // const letter = word[0];
 // const capLetter = word[0].toUpperCase();
 // bucket.push(replace(capLetter, letter));
-function capitalize(str){
-	const words = [];
+// function capitalize(str){
+// 	const words = [];
 
-	for(let word of str.split(" ")){
-		words.push(word[0].toUpperCase() + word.slice(1));
+// 	for(let word of str.split(" ")){
+// 		words.push(word[0].toUpperCase() + word.slice(1));
+// 	}
+// 	return words.join(" ");
+// }
+
+// function myFunction(){
+// 	document.getElementById("demo").innerHTML = capitalize("look, the small crab of the Lordly crabtree!");
+// }
+// //maxChar
+// function maxChar(str){
+// const chars = {};
+// const re = /[^\w]/g;
+// for(let char of str.replace(re, "").toLowerCase()){
+//   chars[char] = chars[char] +1 || 1;
+// }
+
+// return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
+// }
+// maxChar("Nothing was as wonderful as her...her smile. And email.");
+// //objectify
+// function objectify(str){
+// 	const chars = {};
+// 	for(let char of str){
+// 		if(chars[char]){
+// 			chars[char]++;
+// 		}else{
+// 			chars[char] = 1;
+// 		}
+
+// 	}
+// 	return chars;
+// }
+// objectify("Any string will do, for now.");
+//mostFrequentWords
+function mostFrequentWords (string){
+	const words = {};
+	for(let word of toWords(string)){
+		words[word] = words[word] + 1 || 1;
 	}
-	return words.join(" ");
+	return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
 }
-
+function toWords(str){
+	const re = /[^\w]/g;
+	return str.splite(" ").replace(re, "").toLowerCase();
+}
 function myFunction(){
-	document.getElementById("demo").innerHTML = capitalize("look, the small crab of the Lordly crabtree!");
-}
-//maxChar
-function maxChar(str){
-const chars = {};
-const re = /[^\w]/g;
-for(let char of str.replace(re, "").toLowerCase()){
-  chars[char] = chars[char] +1 || 1;
-}
-
-return Object.keys(chars).reduce((a, b) => chars[a] > chars[b] ? a : b);
-}
-maxChar("Nothing was as wonderful as her...her smile. And email.");
-//objectify
-function objectify(str){
-	const chars = {};
-	for(let char of str){
-		if(chars[char]){
-			chars[char]++;
-		}else{
-			chars[char] = 1;
-		}
-
-	}
-	return chars;
-}
-objectify("Any string will do, for now.");
+	document.getElementById("demo").innerHTML = mostFrequentWords("He studied Tarantino films for their subtext.");
