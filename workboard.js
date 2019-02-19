@@ -737,17 +737,38 @@
 // }
 // objectify("Any string will do, for now.");
 //mostFrequentWords
-function mostFrequentWords (string){
+// function mostFrequentWords (string){
  
-	const words = {};
-	for(let word of string.split(" ")){
-		words[word] = words[word] + 1 || 1;
-	}
-	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
+// 	const words = {};
+// 	for(let word of string.split(" ")){
+// 		words[word] = words[word] + 1 || 1;
+// 	}
+// 	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
  
-}
+// }
+// listing the words and frequency
+// function mostFrequentWords (string){
  
- 	document.getElementById("demo").innerHTML = mostFrequentWords("He studied for he Tarantino films for he their");
+// 	const words = {};
+// 	for(let word of string.split(" ")){
+// 		words[word] = words[word] + 1 || 1;
+// 	}
+// 	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
+// }
  
-
+//  	mostFrequentWords("For hours and for weeks he watched Tarantino films, making notes on the mechanics of tention, of dialogue and its silences, and, above all, how a moment expertly milked subtext.");
+ 
+//translating a string into an array of words
 	
+function chunk(array, size){
+	array = array.split(" ");
+	
+	const chunked = [];
+	let index = 0;
+	while(index < array.length){
+		chunked.push(array.slice(index, index + size));
+		index += size;
+	}
+	return chunked;
+}
+chunk("For hours and for weeks he watched Tarantino films, making notes on the mechanics", 3);
