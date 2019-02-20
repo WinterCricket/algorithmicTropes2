@@ -760,15 +760,31 @@
  
 //translating a string into an array of words
 	
-function chunk(array, size){
-	array = array.split(" ");
+// function chunk(array, size){
+// 	array = array.split(" ");
 	
-	const chunked = [];
-	let index = 0;
-	while(index < array.length){
-		chunked.push(array.slice(index, index + size));
-		index += size;
+// 	const chunked = [];
+// 	let index = 0;
+// 	while(index < array.length){
+// 		chunked.push(array.slice(index, index + size));
+// 		index += size;
+// 	}
+// 	return chunked;
+// }
+// chunk("For hours and for weeks he watched Tarantino films, making notes on the mechanics", 3);
+//steps
+function steps(n) {
+	for(let row =0; row < n; row++){
+		let stair = "";
+
+		for(let column = 0; column < n; column++){
+			if(column <= row){
+			stair += "#";
+		} else {
+			stair += " ";
+		}
 	}
-	return chunked;
+	console.log(stair);
 }
-chunk("For hours and for weeks he watched Tarantino films, making notes on the mechanics", 3);
+}
+steps(7);
