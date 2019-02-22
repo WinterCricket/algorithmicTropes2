@@ -773,18 +773,45 @@
 // }
 // chunk("For hours and for weeks he watched Tarantino films, making notes on the mechanics", 3);
 //steps
-function steps(n) {
-	for(let row =0; row < n; row++){
-		let stair = "";
+// function steps(n){
+// 	for(let row = 0; row < n; row++){
+//   	let stair = "";
+//     for(let column = 0; column < n; column++){
+//     	if(column <= row){
+//       	stair += "#";
+//       } else {
+//       	stair += " ";
+//       }
+//     }
+//     console.log(stair);
+//   }
+// }
 
-		for(let column = 0; column < n; column++){
-			if(column <= row){
-			stair += "#";
-		} else {
-			stair += " ";
-		}
-	}
-	console.log(stair);
+// steps(5);
+// // frequency
+// function frequency(str){
+
+//   str = str.toLowerCase();
+//   const words = {};
+//   for(let word of str.split(" ")){
+//   	words[word] = words[word] + 1 || 1;
+//   }
+//   return words;
+// }
+// frequency("This was what we was called for and was");
+//pyramid
+function pyramid(n) {
+	const midpt = Math.floor((2 * n -1)/2);
+  for(let row = 0; row < n; row++){
+  	let stair = "";
+    for(let column = 0; column < 2 * n -1; column++){
+    	if(midpt - row <= column && midpt + row >= column){
+      	stair += "#";
+      } else{
+      	stair += " ";
+      }
+    }
+    console.log(stair);
+  }
 }
-}
-steps(7);
+pyramid(5);
