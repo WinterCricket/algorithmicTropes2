@@ -790,23 +790,23 @@
 
 //recursive steps printout
 
-function steps(n, row=0, stair=""){
-	if(n === row){
-		return;
-	}
-	if(n === stair.length){
-		console.log(stair);
-		return steps(n, row + 1);
-	}
-	if(stair.length <= row){
-		stair += "#";
-	} else{
-		stair += " ";
-	}
-	steps(n, row, stair);
-}
+// function steps(n, row=0, stair=""){
+// 	if(n === row){
+// 		return;
+// 	}
+// 	if(n === stair.length){
+// 		console.log(stair);
+// 		return steps(n, row + 1);
+// 	}
+// 	if(stair.length <= row){
+// 		stair += "#";
+// 	} else{
+// 		stair += " ";
+// 	}
+// 	steps(n, row, stair);
+// }
 
- steps(5);
+ // steps(5);
 // // frequency
 // function frequency(str){
 
@@ -818,7 +818,7 @@ function steps(n, row=0, stair=""){
 //   return words;
 // }
 // frequency("This was what we was called for and was");
-//pyramid
+// iterative pyramid
 // function pyramid(n) {
 // 	const midpt = Math.floor((2 * n -1)/2);
 //   for(let row = 0; row < n; row++){
@@ -834,3 +834,21 @@ function steps(n, row=0, stair=""){
 //   }
 // }
 // pyramid(5);
+
+//palindrome with self fashioned reverse method
+function palindrome(str){
+	const re = /[^\w]/g;
+  str = str.replace(re, "").toLowerCase();
+  const revStr = mirror(str);
+  return str === revStr;
+}
+
+function mirror(item){
+	let mirrored = "";
+  for(let it of item){
+  	mirrored = it + mirrored;
+  }
+  return mirrored;
+}
+
+palindrome("ey eye")
