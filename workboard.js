@@ -786,8 +786,27 @@
 //     console.log(stair);
 //   }
 // }
+// steps(5)
 
-// steps(5);
+//recursive steps printout
+
+function steps(n, row=0, stair=""){
+	if(n === row){
+		return;
+	}
+	if(n === stair.length){
+		console.log(stair);
+		return steps(n, row + 1);
+	}
+	if(stair.length <= row){
+		stair += "#";
+	} else{
+		stair += " ";
+	}
+	steps(n, row, stair);
+}
+
+ steps(5);
 // // frequency
 // function frequency(str){
 
@@ -800,18 +819,18 @@
 // }
 // frequency("This was what we was called for and was");
 //pyramid
-function pyramid(n) {
-	const midpt = Math.floor((2 * n -1)/2);
-  for(let row = 0; row < n; row++){
-  	let stair = "";
-    for(let column = 0; column < 2 * n -1; column++){
-    	if(midpt - row <= column && midpt + row >= column){
-      	stair += "#";
-      } else{
-      	stair += " ";
-      }
-    }
-    console.log(stair);
-  }
-}
-pyramid(5);
+// function pyramid(n) {
+// 	const midpt = Math.floor((2 * n -1)/2);
+//   for(let row = 0; row < n; row++){
+//   	let stair = "";
+//     for(let column = 0; column < 2 * n -1; column++){
+//     	if(midpt - row <= column && midpt + row >= column){
+//       	stair += "#";
+//       } else{
+//       	stair += " ";
+//       }
+//     }
+//     console.log(stair);
+//   }
+// }
+// pyramid(5);
