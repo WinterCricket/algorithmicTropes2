@@ -836,19 +836,27 @@
 // pyramid(5);
 
 //palindrome with self fashioned reverse method
-function palindrome(str){
-	const re = /[^\w]/g;
-  str = str.replace(re, "").toLowerCase();
-  const revStr = mirror(str);
-  return str === revStr;
-}
+// function palindrome(str){
+// 	const re = /[^\w]/g;
+//   str = str.replace(re, "").toLowerCase();
+//   const revStr = mirror(str);
+//   return str === revStr;
+// }
 
-function mirror(item){
-	let mirrored = "";
-  for(let it of item){
-  	mirrored = it + mirrored;
-  }
-  return mirrored;
-}
+// function mirror(item){
+// 	let mirrored = "";
+//   for(let it of item){
+//   	mirrored = it + mirrored;
+//   }
+//   return mirrored;
+// }
 
-palindrome("ey eye")
+// palindrome("ey eye");
+
+//vowel count
+function vowels(str) {
+	const vowel = /[^\aeiou]/g;
+	str = str.replace(vowel, "");
+	return str.length;
+}
+vowels("This was the test you asked for.");
