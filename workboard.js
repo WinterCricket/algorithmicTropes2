@@ -859,9 +859,13 @@
 // 	str = str.replace(vowel, "");
 // 	return str.length;
 // }
-function vowels(str) {
-	const vowel = /[^\aeiou]/g;
-	str = str.replace(vowel, "");
-	return str.length;
+// function vowels(str) {
+// 	const vowel = /[^\aeiou]/g;
+// 	str = str.replace(vowel, "");
+// 	return str.length;
+// }
+function vowels(str){
+	const matches = str.match(/[aeiou]/gi);
+	return matches ? matches.length : 0;
 }
 vowels("This was the test you asked for.");
