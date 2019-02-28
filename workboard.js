@@ -854,6 +854,11 @@
 // palindrome("ey eye");
 
 //vowel count
+// function vowels(str) {
+// 	const vowel = /[^\aeiou]/g;
+// 	str = str.replace(vowel, "");
+// 	return str.length;
+// }
 function vowels(str) {
 	const vowel = /[^\aeiou]/g;
 	str = str.replace(vowel, "");
