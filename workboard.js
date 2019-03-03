@@ -925,21 +925,11 @@
 // }
 // document.getElementById("demo").innerHTML = matrix(3);
 //hash table fib sequence
-function fib(n){
-	const arr = [0, 1];
-  const mapper = {};
-  let counter = 0;
-  
-  for(let i = 2; i <= n; i++){
-  	let a = arr[i-1];
-    let b = arr[i-2];
-    arr.push(a + b);
-  }
-  for(let el in arr){
-  	mapper[counter] = arr[el];
-    counter++;
-  }
-  return Object.values(mapper);
+function fib(n) {
+	if(n < 2){
+		return n;
+	}
+	return fib(n-1) + fib(n-2);
 }
 function myFunction(){
 document.getElementById("demo").innerHTML = fib(6);
