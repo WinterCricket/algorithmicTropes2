@@ -939,6 +939,8 @@ function fib(n){
   	mapper[counter] = arr[el];
     counter++;
   }
-  return mapper;
+  return Object.values(mapper);
 }
-fib(6);
+function myFunction(){
+document.getElementById("demo").innerHTML = fib(6);
+}
