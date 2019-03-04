@@ -934,15 +934,35 @@
 // function myFunction(){
 // document.getElementById("demo").innerHTML = fib(6);
 // }
-function fib(n){
-	const array = [0, 1];
-	for(let i = 2; i <= n; i++){
-		const a = array[i -1];
-		const b = array[i -2];
-		array.push(a + b);
-	}
-	return array[n];
+// function fib(n){
+// 	const array = [0, 1];
+// 	for(let i = 2; i <= n; i++){
+// 		const a = array[i -1];
+// 		const b = array[i -2];
+// 		array.push(a + b);
+// 	}
+// 	return array[n];
+// }
+
+function memoize(fn){
+	const cache = {};
+  return function(...args){
+  if(cache[args]){
+  	return cache[args];
+  }
+    const results = fn.apply(this, args);
+    cache[args] = results;
+    return results;
+  };
 }
+
+function slowFib(n){
+	if(n < 2){
+  	return n;
+  }
+  return fib(n - 1) + fib(n -2);
+}
+const fib = memoize(slowFib);
 function myFunction(){
 	document.getElementById("demo").innerHTML = "Here is the nth number of the fib sequence: " + fib(9);
 }
