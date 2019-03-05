@@ -944,25 +944,37 @@
 // 	return array[n];
 // }
 
-function memoize(fn){
-	const cache = {};
-  return function(...args){
-  if(cache[args]){
-  	return cache[args];
-  }
-    const results = fn.apply(this, args);
-    cache[args] = results;
-    return results;
-  };
-}
+// function memoize(fn){
+// 	const cache = {};
+//   return function(...args){
+//   if(cache[args]){
+//   	return cache[args];
+//   }
+//     const results = fn.apply(this, args);
+//     cache[args] = results;
+//     return results;
+//   };
+// }
 
-function slowFib(n){
-	if(n < 2){
-  	return n;
-  }
-  return fib(n - 1) + fib(n -2);
-}
-const fib = memoize(slowFib);
-function myFunction(){
-	document.getElementById("demo").innerHTML = "Here is the nth number of the fib sequence: " + fib(9);
+// function slowFib(n){
+// 	if(n < 2){
+//   	return n;
+//   }
+//   return fib(n - 1) + fib(n -2);
+// }
+// const fib = memoize(slowFib);
+// function myFunction(){
+// 	document.getElementById("demo").innerHTML = "Here is the nth number of the fib sequence: " + fib(13);
+// }
+Class Queue {
+
+	constructor() {
+		this.data = [];
+	}
+	add(record) {
+		this.data.unshift(record);
+	}
+	remove() {
+		this.data.pop();
+	}
 }
