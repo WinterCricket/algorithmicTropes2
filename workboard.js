@@ -975,7 +975,7 @@ Class Queue {
 		this.data.unshift(record);
 	}
 	remove() {
-		this.data.pop();
+		this.data.pop(record);
 	}
 
 	peek() {
