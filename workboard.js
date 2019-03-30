@@ -1047,10 +1047,9 @@ this.language = lang;
 }
 
 const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
-           52, "MFA, BFA");           
-
+           52, "MFA, BFA"); 
 const horace = new User("French, Python, HTML5", "WP, Git", 44000, 27, "BS");
 harry;
-horace;
-const comp = harry.income +" vs "+horace.income;
-comp
+
+const comp = harry.userMethod() +" vs "+horace.userMethod();
+comp;
