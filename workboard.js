@@ -966,6 +966,8 @@
 // function myFunction(){
 // 	document.getElementById("demo").innerHTML = "Here is the nth number of the fib sequence: " + fib(13);
 // }
+
+
 // class Queue {
 
 // 	constructor() {
@@ -1021,18 +1023,30 @@
 // }
 
 //objects and class
-const harryUser = {
+// const harryUser = {
 
-	languages: "PHP, JS, mySQL, HTML5, CSS3",
-  additions: "Laravel, NodeJS, WP, ReactJS, Git",
-  income: 134000,
-  age: 52,
-  education: "MFA, BFA",
-	harryMethod: function(){
-  	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
-  }
+// 	languages: "PHP, JS, mySQL, HTML5, CSS3",
+//   additions: "Laravel, NodeJS, WP, ReactJS, Git",
+//   income: 134000,
+//   age: 52,
+//   education: "MFA, BFA",
+// 	harryMethod: function(){
+//   	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
+//   }
+// }
+
+
+// harryUser.harryMethod();
+// harryUser.age
+function User(lang, extra, income, age, ed){
+this.language = lang;
+  this.additions = extra;
+  this.income = income;
+  this.age = age;
+  this.education = ed;
 }
 
+const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
+           52, "MFA, BFA");           
 
-harryUser.harryMethod();
-harryUser.age
+harry.education
