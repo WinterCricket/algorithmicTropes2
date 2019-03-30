@@ -983,39 +983,56 @@
 // 	}
 // }
 //two stacks to make a queue
-const Stack = require('./stack');
+// const Stack = require('./stack');
 
-class Queue {
-	constructor(){
-		this.first = new Stack();
-		this.second = new Stack();
-	}
+// class Queue {
+// 	constructor(){
+// 		this.first = new Stack();
+// 		this.second = new Stack();
+// 	}
 
-	add(record){
-		this.first.push(record);
-	}
+// 	add(record){
+// 		this.first.push(record);
+// 	}
 
-	remove(){
-		while(this.first.peek()){
-			this.second.push(this.first.pop());
-		}
+// 	remove(){
+// 		while(this.first.peek()){
+// 			this.second.push(this.first.pop());
+// 		}
 
-		const record = this.second.pop();
+// 		const record = this.second.pop();
 
-		while(this.second.peek()){
-			this.first.push(this.second.pop());
-		}
-		return record;
-	}
-	peek(){
-		while(this.first.peek()){
-			this.second.push(this.first.pop());
-		}
-		const record = this.second.peek();
+// 		while(this.second.peek()){
+// 			this.first.push(this.second.pop());
+// 		}
+// 		return record;
+// 	}
+// 	peek(){
+// 		while(this.first.peek()){
+// 			this.second.push(this.first.pop());
+// 		}
+// 		const record = this.second.peek();
 
-		while(this.second.peek()){
-			this.first.push(this.second.pop());
-		}
-		return record;
-	}
+// 		while(this.second.peek()){
+// 			this.first.push(this.second.pop());
+// 		}
+// 		return record;
+// 	}
+// }
+
+//objects and class
+const harryUser = {
+
+	languages: "PHP, JS, mySQL, HTML5, CSS3",
+  additions: "Laravel, NodeJS, WP, ReactJS, Git",
+  income: 134000,
+  age: 52,
+  education: "MFA, BFA",
+	harryMethod: function(){
+  	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
+  }
 }
+
+
+harryUser.harryMethod();
+harryUser.age
