@@ -1044,6 +1044,11 @@ this.language = lang;
   this.income = income;
   this.age = age;
   this.education = ed;
+  this.userMethod=
+  	return function(){
+  return "This engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.language;
+  }
+  
 }
 
 const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
