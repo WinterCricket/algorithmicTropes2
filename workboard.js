@@ -1038,25 +1038,40 @@
 
 // harryUser.harryMethod();
 // harryUser.age
-function User(lang, extra, income, age, ed){
-this.language = lang;
-  this.additions = extra;
-  this.income = income;
-  this.age = age;
-  this.education = ed;
+// function User(lang, extra, income, age, ed){
+// this.language = lang;
+//   this.additions = extra;
+//   this.income = income;
+//   this.age = age;
+//   this.education = ed;
   
   
+// }
+
+// User.prototype.userMethod=
+//   	 function(){
+//   return "This engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.language;
+//   }
+
+// const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
+//            52, "MFA, BFA"); 
+// const horace = new User("French, Python, HTML5", "WP, Git", 44000, 27, "BS");
+// harry;
+
+// const comp = harry.userMethod() +" vs "+horace.userMethod();
+// comp;
+
+function saysHello(user){
+	return "Hello, "+ user +"!";
 }
 
-User.prototype.userMethod=
-  	 function(){
-  return "This engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.language;
-  }
+function saysBye(user){
+	return "Bye, "+ user+"!";
+}
 
-const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
-           52, "MFA, BFA"); 
-const horace = new User("French, Python, HTML5", "WP, Git", 44000, 27, "BS");
-harry;
+function greet(user, callback){
+	return callback(user);
+}
 
-const comp = harry.userMethod() +" vs "+horace.userMethod();
-comp;
+greet("Jimmy", saysBye);//Bye, Jimmy!
+greet("Sally", saysHello);//Hello, Sally!
