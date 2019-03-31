@@ -1075,6 +1075,7 @@ function greet(user, callback){
 
 greet("Jimmy", saysBye);//Bye, Jimmy!
 greet("Sally", saysHello);//Hello, Sally!
+
 //equivalent of callback for arrays
 const cars = ["Lexus","Toyota","Audi"];
 
@@ -1086,3 +1087,18 @@ function yourCar(car){
  
 //}
 cars.forEach(yourCar);
+
+//map as callback for array, but it creates a new array
+const cars = ["Lexus","Toyota","Audi"];
+
+function yourCar(car){
+	return car + " is presently the best car for you.";
+}
+//let newArr = [];
+//for(let i = 0; i < cars.length; i++){
+  //newArr.push(yourCar(cars[i]));
+ 
+//}
+
+const newArr = cars.map(yourCar);
+console.log(newArr);
