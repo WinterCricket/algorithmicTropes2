@@ -1075,3 +1075,14 @@ function greet(user, callback){
 
 greet("Jimmy", saysBye);//Bye, Jimmy!
 greet("Sally", saysHello);//Hello, Sally!
+//equivalent of callback for arrays
+const cars = ["Lexus","Toyota","Audi"];
+
+function yourCar(car){
+	 console.log(car + " is presently the best car for you.");
+}
+//for(let i = 0; i < cars.length; i++){
+ // yourCar(cars[i]);
+ 
+//}
+cars.forEach(yourCar);
