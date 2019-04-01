@@ -1102,3 +1102,16 @@ function yourCar(car){
 
 const newArr = cars.map(yourCar);
 console.log(newArr);
+
+//sum in function
+const nums = [1,2,4,5,7,8];
+function sumFunc(currentSum, number){
+  return currentSum + number;
+}
+	let sum = 0;
+  for(let i = 0; i < nums.length; i++){
+  	sum = sumFunc(sum, nums[i]);
+  }
+  
+
+console.log(sum)
