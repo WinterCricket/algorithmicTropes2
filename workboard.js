@@ -1023,43 +1023,46 @@
 // }
 
 //objects and class
-// const harryUser = {
+const harryUser = {
+	stacks: "LAMP, MERN",
+	languages: "PHP, JS, mySQL, HTML5, CSS3",
+  additions: "Laravel, NodeJS, WP, ReactJS, Git",
+  income: 134000,
+  age: 52,
+  education: "MFA, BFA",
+	harryMethod: function(){
+  	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
+  }
+}
 
-// 	languages: "PHP, JS, mySQL, HTML5, CSS3",
-//   additions: "Laravel, NodeJS, WP, ReactJS, Git",
-//   income: 134000,
-//   age: 52,
-//   education: "MFA, BFA",
-// 	harryMethod: function(){
-//   	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
-//   }
-// }
 
 
-// harryUser.harryMethod();
-// harryUser.age
-// function User(lang, extra, income, age, ed){
-// this.language = lang;
-//   this.additions = extra;
-//   this.income = income;
-//   this.age = age;
-//   this.education = ed;
+
+function User(stacks, lang, extra, income, age, ed){
+  this.stacks = stacks;
+this.languages = lang;
+  this.additions = extra;
+  this.income = income;
+  this.age = age;
+  this.education = ed;
   
   
-// }
+}
 
-// User.prototype.userMethod=
-//   	 function(){
-//   return "This engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.language;
-//   }
+User.prototype.userMethod=
+  	 function(){
+  return "This " + this.stacks + " engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.languages;
+  }
 
-// const harry = new User("PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
-//            52, "MFA, BFA"); 
-// const horace = new User("French, Python, HTML5", "WP, Git", 44000, 27, "BS");
-// harry;
+const harry = new User("LAMP, MERN","PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
+           52, "MFA, BFA"); 
+const horace = new User("MEAN", "French, Python, HTML5", "WP, Git", 44000, 27, "BS");
+horace.additions
 
-// const comp = harry.userMethod() +" vs "+horace.userMethod();
-// comp;
+const comp = harry.userMethod() +" vs "+horace.userMethod();
+comp
+
+//
 
 function saysHello(user){
 	return "Hello, "+ user +"!";
