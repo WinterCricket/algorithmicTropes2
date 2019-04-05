@@ -1023,98 +1023,119 @@
 // }
 
 //objects and class
-const harryUser = {
-	stacks: "LAMP, MERN",
-	languages: "PHP, JS, mySQL, HTML5, CSS3",
-  additions: "Laravel, NodeJS, WP, ReactJS, Git",
-  income: 134000,
-  age: 52,
-  education: "MFA, BFA",
-	harryMethod: function(){
-  	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
-  }
-}
+// const harryUser = {
+// 	stacks: "LAMP, MERN",
+// 	languages: "PHP, JS, mySQL, HTML5, CSS3",
+//   additions: "Laravel, NodeJS, WP, ReactJS, Git",
+//   income: 134000,
+//   age: 52,
+//   education: "MFA, BFA",
+// 	harryMethod: function(){
+//   	return this.languages + " and with degrees of " + this.education + ". His additional relevant skills are " + this.additions;
+//   }
+// }
 
 
 
 
-function User(stacks, lang, extra, income, age, ed){
-  this.stacks = stacks;
-this.languages = lang;
-  this.additions = extra;
-  this.income = income;
-  this.age = age;
-  this.education = ed;
+// function User(stacks, lang, extra, income, age, ed){
+//   this.stacks = stacks;
+// this.languages = lang;
+//   this.additions = extra;
+//   this.income = income;
+//   this.age = age;
+//   this.education = ed;
   
   
-}
+// }
 
-User.prototype.userMethod=
-  	 function(){
-  return "This " + this.stacks + " engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.languages;
-  }
+// User.prototype.userMethod=
+//   	 function(){
+//   return "This " + this.stacks + " engineer has this for education: "+this.education + ", and knows these tech languages: "+ this.languages;
+//   }
 
-const harry = new User("LAMP, MERN","PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
-           52, "MFA, BFA"); 
-const horace = new User("MEAN", "French, Python, HTML5", "WP, Git", 44000, 27, "BS");
-horace.additions
+// const harry = new User("LAMP, MERN","PHP, JS, mySQL, HTML5, CSS3","Laravel, NodeJS, WP, ReactJS, Git",134000,
+//            52, "MFA, BFA"); 
+// const horace = new User("MEAN", "French, Python, HTML5", "WP, Git", 44000, 27, "BS");
+// horace.additions
 
-const comp = harry.userMethod() +" vs "+horace.userMethod();
-comp
+// const comp = harry.userMethod() +" vs "+horace.userMethod();
+// comp
 
-//
+// //
 
-function saysHello(user){
-	return "Hello, "+ user +"!";
-}
+// function saysHello(user){
+// 	return "Hello, "+ user +"!";
+// }
 
-function saysBye(user){
-	return "Bye, "+ user+"!";
-}
+// function saysBye(user){
+// 	return "Bye, "+ user+"!";
+// }
 
-function greet(user, callback){
-	return callback(user);
-}
+// function greet(user, callback){
+// 	return callback(user);
+// }
 
-greet("Jimmy", saysBye);//Bye, Jimmy!
-greet("Sally", saysHello);//Hello, Sally!
+// greet("Jimmy", saysBye);//Bye, Jimmy!
+// greet("Sally", saysHello);//Hello, Sally!
 
-//equivalent of callback for arrays
-const cars = ["Lexus","Toyota","Audi"];
+// //equivalent of callback for arrays
+// const cars = ["Lexus","Toyota","Audi"];
 
-function yourCar(car){
-	 console.log(car + " is presently the best car for you.");
-}
-//for(let i = 0; i < cars.length; i++){
- // yourCar(cars[i]);
+// function yourCar(car){
+// 	 console.log(car + " is presently the best car for you.");
+// }
+// //for(let i = 0; i < cars.length; i++){
+//  // yourCar(cars[i]);
  
-//}
-cars.forEach(yourCar);
+// //}
+// cars.forEach(yourCar);
 
-//map as callback for array, but it creates a new array
-const cars = ["Lexus","Toyota","Audi"];
+// //map as callback for array, but it creates a new array
+// const cars = ["Lexus","Toyota","Audi"];
 
-function yourCar(car){
-	return car + " is presently the best car for you.";
-}
-//let newArr = [];
-//for(let i = 0; i < cars.length; i++){
-  //newArr.push(yourCar(cars[i]));
+// function yourCar(car){
+// 	return car + " is presently the best car for you.";
+// }
+// //let newArr = [];
+// //for(let i = 0; i < cars.length; i++){
+//   //newArr.push(yourCar(cars[i]));
  
-//}
+// //}
 
-const newArr = cars.map(yourCar);
-console.log(newArr);
+// const newArr = cars.map(yourCar);
+// console.log(newArr);
 
-//sum in function
-const nums = [1,2,4,5,7,8];
-function sumFunc(currentSum, number){
-  return currentSum + number;
-}
-	let sum = 0;
-  for(let i = 0; i < nums.length; i++){
-  	sum = sumFunc(sum, nums[i]);
-  }
+// //sum in function
+// const nums = [1,2,4,5,7,8];
+// function sumFunc(currentSum, number){
+//   return currentSum + number;
+// }
+// 	let sum = 0;
+//   for(let i = 0; i < nums.length; i++){
+//   	sum = sumFunc(sum, nums[i]);
+//   }
   
 
-console.log(sum)
+// console.log(sum)
+
+function Position(name, job, stack, lang){
+	this.name = name,
+	this.job = job,
+	this.stack = stack,
+	this.codelanguage = lang
+}
+
+Position.prototype.userMethod = function(name, job, stack, lang){
+	return "I am " + this.name + " , a "+this.job+
+	". My stack composition is "+this.stack+
+	", and my two primary programming languages are "+this.lang+".";
+}
+
+function coderSpeaks(wage){
+	if(wage <== 49999){
+		return Position.job = "Front End Web Developer";
+	}
+	return Postion.job = "Full Stack Web Developer";
+}
+coderSpeaks(56000);
