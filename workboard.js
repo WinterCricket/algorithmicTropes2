@@ -1131,11 +1131,19 @@ Position.prototype.userMethod = function(name, job, stack, lang){
 	". My stack composition is "+this.stack+
 	", and my two primary programming languages are "+this.lang+".";
 }
+const fullstack = new Position("Harry", "Full Stack Web Developer", "WAMP and MERN", "PHP and JavaScript");
+const frontend = new Position("Josh", "Front End Web Developer", "MEAN", "JavaScript");
 
 function coderSpeaks(wage){
-	if(wage <== 49999){
-		return Position.job = "Front End Web Developer";
-	}
-	return Postion.job = "Full Stack Web Developer";
+	if(wage <= 49999){
+		 Position.job = "Front End Web Developer";
+	} else {
+	 Position.job = "Full Stack Web Developer";
+}
+if(Position.job === "Full Stack Web Developer"){
+	return fullstack.userMethod();
+}
+return frontend.userMethod();
 }
 coderSpeaks(56000);
+
