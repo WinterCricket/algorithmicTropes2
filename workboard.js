@@ -1129,7 +1129,7 @@ function Position(name, job, stack, lang){
 Position.prototype.userMethod = function(name, job, stack, lang){
 	return "I am " + this.name + " , a "+this.job+
 	". My stack composition is "+this.stack+
-	", and my two primary programming languages are "+this.lang+".";
+	", and my two primary programming languages are "+this.codelanguage+".";
 }
 const fullstack = new Position("Harry", "Full Stack Web Developer", "WAMP and MERN", "PHP and JavaScript");
 const frontend = new Position("Josh", "Front End Web Developer", "MEAN", "JavaScript");
