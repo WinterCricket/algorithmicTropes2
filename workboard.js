@@ -11,7 +11,7 @@
 
 // collection.filter(function(object){
 // 	pre.push("sex");
-	
+
 
 // });
 // pre
@@ -116,8 +116,8 @@
 // var sit = desks.reduce(function(sitting, desk) {
 //   if(desk.type === 'sitting'){return sitting + 1;}
 //   return sitting 
-	
- 
+
+
 // }, 0);
 
 // var stand = desks.reduce(function(standing, desk){
@@ -141,7 +141,7 @@
 //   }else {
 //   	result[char] = 1;
 //   };
-   
+
 //   }
 //   return result;
 // }
@@ -178,25 +178,25 @@
 //         acc.standing++
 //     }
 //     return acc;
-    
+
 // }, { sitting: 0, standing: 0 });
 // deskTypes
 
 
 // //remove redundant elements from array
 // function unique(array) {
-  
+	
 
 	
 //   	return [...new Set(array)];
-  
+
 
 // }
 // unique([1,1,3,4,4,4,5,7,7]);//[1,3,4,5,7]
 // //longer version, using reduce
 
 // function unique(origin) {
-  
+	
 // var array = origin.split(" ");
 
 //   	return array.reduce(function(acc, curr){
@@ -205,7 +205,7 @@
 //     }
 //       return acc;
 //     }, []);
-  
+
 
 // }
 // unique("All of the free movies found on this website are hosted on third-party servers that are freely available to watch online for all internet users. Any legal issues regarding the free online movies on this website should be taken up with the actual file hosts themselves, as we're not affiliated with them.");
@@ -256,7 +256,7 @@
 
 // function generateId(){
 // return Math.random()* 99999;
-  
+
 // }
 
 // function createAdminUser(user = new User(generateId())  ){
@@ -274,7 +274,7 @@
 
 // function truthCheck(collection = "defaulted", pre = "defaulted") {
 //   // Is everyone being true?
-  
+
 //   collection.every(function(person){
 //   	if(!person.pre){
 //     	return false;
@@ -283,7 +283,7 @@
 //      }
 //     return 
 //   });
-  
+
 // truthCheck(
 //   [
 //   {"user": "Tinky-Winky", "sex": "male"}, 
@@ -302,11 +302,11 @@
 
 // //use ternary 
 // function truthCheck(collection = "defaulted", pre = "defaulted") {
- 
+	
 //   return collection.every(person=> person.find(pre) ? true : false);
-    
+
 // }
-  
+
 // truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
 // //rest and spread
@@ -324,7 +324,7 @@
 // //refactor for a 
 // function product(...numbers) {
 
-  
+	
 //   return numbers.reduce((acc, number)=>  acc * number, 1);
 // }
 // product(3,5,7)
@@ -341,12 +341,12 @@
 // //fizzbuzz from the top
 // function fizzBuzz(){
 // for(let i = 1; i <= 100; i++){
- 
+	
 // 	if(i % 15 === 0){
-   
+	
 //   console.log("FizzBuzz");
 //   } else if(i % 5 === 0){
-  
+	
 //   	console.log("Buzz");
 //   } else if(i % 3 === 0){
 //    console.log("Fizz");
@@ -370,7 +370,7 @@
 // function reverse(str) {
 //    let arr = [];
 //    for(let i = str.length; i > -1; i--){
-    
+	
 //      arr.push(str[i]);
 //    }
 //    return arr.join("");
@@ -431,7 +431,7 @@
 // //most literal/direct palindrome func
 // function palindrome(str) {
 //  var re = /[^A-Za-z0-9]/g;
- 
+
 //  var len = str.length;
 //  for (var i = 0; i < len/2; i++) {
 //    if (str[i] !== str[len - 1 - i]) {
@@ -496,7 +496,7 @@
 // reverseInt(123);
 // //reverse int with regard to sign and value
 // function reverseInt(n){
- 
+	
 //   const reversed = n.toString().split("").reverse().join("");
 //   return Math.sign(n) * parseInt(reversed);
 // }
@@ -535,7 +535,7 @@
 //     }else {
 //        charMap[char] = 1;
 //     }
-  
+
 //   }
 //   for(let char in charMap){
 //     if(charMap[char] > max){
@@ -549,12 +549,12 @@
 // //fizzbuzz
 // function fizzBuzz(n){
 // for(let i = 1; i <= n; i++){
- 
+	
 //   if(i % 15 === 0){
-   
+	
 //   console.log("fizzbuzz");
 //   } else if(i % 5 === 0){
-  
+	
 //     console.log("buzz");
 //   } else if(i % 3 === 0){
 //    console.log("fizz");
@@ -628,7 +628,7 @@
 //     } else {
 //       object[el] = 1;
 //     }
-    
+
 //   } 
 // return object;
 // }
@@ -692,7 +692,7 @@
 //   const oldLet = word[0];
 //   const cap = word[0].toUpperCase();
 //    return word.replace(oldLet, cap).join();
-  
+
 // }
 //  capitalize("the sore neck of the library screams");
 
@@ -738,31 +738,31 @@
 // objectify("Any string will do, for now.");
 //mostFrequentWords
 // function mostFrequentWords (string){
- 
+	
 // 	const words = {};
 // 	for(let word of string.split(" ")){
 // 		words[word] = words[word] + 1 || 1;
 // 	}
 // 	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
- 
+
 // }
 // listing the words and frequency
 // function mostFrequentWords (string){
- 
+	
 // 	const words = {};
 // 	for(let word of string.split(" ")){
 // 		words[word] = words[word] + 1 || 1;
 // 	}
 // 	 return Object.keys(words).reduce((a, b)=> words[a] > words[b] ? a:b);
 // }
- 
+
 //  	mostFrequentWords("For hours and for weeks he watched Tarantino films, making notes on the mechanics of tention, of dialogue and its silences, and, above all, how a moment expertly milked subtext.");
- 
+
 //translating a string into an array of words
-	
+
 // function chunk(array, size){
 // 	array = array.split(" ");
-	
+
 // 	const chunked = [];
 // 	let index = 0;
 // 	while(index < array.length){
@@ -863,7 +863,7 @@
 
 // 	let count = 0;
 //  const checker = ["a", "e", "i", "o", "u"];
- 
+
 //  for(let char of str.toLowerCase()){
 //  	if(checker.includes(char)){
 //   	count++;
@@ -1045,8 +1045,8 @@
 //   this.income = income;
 //   this.age = age;
 //   this.education = ed;
-  
-  
+
+
 // }
 
 // User.prototype.userMethod=
@@ -1087,7 +1087,7 @@
 // }
 // //for(let i = 0; i < cars.length; i++){
 //  // yourCar(cars[i]);
- 
+
 // //}
 // cars.forEach(yourCar);
 
@@ -1100,7 +1100,7 @@
 // //let newArr = [];
 // //for(let i = 0; i < cars.length; i++){
 //   //newArr.push(yourCar(cars[i]));
- 
+
 // //}
 
 // const newArr = cars.map(yourCar);
@@ -1115,7 +1115,7 @@
 //   for(let i = 0; i < nums.length; i++){
 //   	sum = sumFunc(sum, nums[i]);
 //   }
-  
+
 
 // console.log(sum)
 
@@ -1136,14 +1136,34 @@ const frontend = new Position("Josh", "Front End Web Developer", "MEAN", "JavaSc
 
 function coderSpeaks(wage){
 	if(wage <= 49999){
-		 Position.job = "Front End Web Developer";
+		Position.job = "Front End Web Developer";
 	} else {
-	 Position.job = "Full Stack Web Developer";
+		Position.job = "Full Stack Web Developer";
+	}
+	if(Position.job === "Full Stack Web Developer"){
+		return fullstack.userMethod();
+	}
+	return frontend.userMethod();
 }
-if(Position.job === "Full Stack Web Developer"){
-	return fullstack.userMethod();
-}
-return frontend.userMethod();
-}
-coderSpeaks(56000);
 
+function myFunction(){
+	document.getElementById("demo").innerHTML = coderSpeaks(56000);
+}
+
+
+//writer class
+function Writer(name, voice, plot, theme){
+	this.name = name;
+	this.voice = voice;
+	this.plot = plot;
+	this.theme = theme;
+}
+
+
+Writer.prototype.report= function(name, voice, plot, theme){
+	return "I'm "+this.name+", a writer. My plot moves by means of "+this.plot+", while the meaning and feeling is most controlled by the idea of "+this.theme+".";
+}
+
+const jules = new Writer("Jules Konrad", "singing sadness", "bear at the door", "hiding value kills you");
+
+jules.report();
