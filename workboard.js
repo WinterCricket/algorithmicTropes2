@@ -1167,3 +1167,26 @@ Writer.prototype.report= function(name, voice, plot, theme){
 const jules = new Writer("Jules Konrad", "singing sadness", "bear at the door", "hiding value kills you");
 
 jules.report();
+
+//class Car
+function Car(cost, safety, model){
+
+	this.cost = cost;
+  this.safety = safety;
+  this.model = model;
+}
+
+Car.prototype.carMethod = function(cost){
+	if(this.cost <= 5000){
+  	return "For " +this.cost+" and a handjob, I'll buy this "+this.model+".";
+  } else if (this.cost <=20000){
+  return "Give me a break! This "+this.model+ " for "+this.cost+" is too much, especially with a mere "+this.safety+". You've got to come down on the price.";
+  }
+  return "For this price of "+this.cost+" I'll buy a house, not a stinking "+this.model+"! I'll change my mind if you can improve on the  " +this.safety+".";
+}
+
+
+const audi = new Car(14000, "moderate safety", "A5");
+
+const camry = new Car(103000, "poor safety", "Camry");
+camry.carMethod();
