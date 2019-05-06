@@ -1246,3 +1246,10 @@ for(let j = 2; j < n; j++){
 const arr = fib(7)
 
 arr+ " sums to "+sumUp(arr);
+//reduce array to sentence
+const words = ['This', 'is', 'a', 'way', 'to', 'build', 'meaning'];
+
+const sentence = words.reduce(function(accumulator, word){
+return accumulator + ' ' + word;
+});
+sentence
