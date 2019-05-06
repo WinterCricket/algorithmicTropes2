@@ -1253,3 +1253,17 @@ const sentence = words.reduce(function(accumulator, word){
 return accumulator + ' ' + word;
 });
 sentence
+//callback in sell buy algo
+function buyStock(user){
+	return user + ", buy this book now!";
+}
+
+function sellStock(user){
+  return "Okay, "+user+", time to sell this stock!";
+}
+
+function response(user, cb){
+return cb(user);
+}
+
+response("Rory", sellStock);
