@@ -1225,3 +1225,24 @@ let sum = 0;
 
 const arr = fib(7);
 sumUp(arr);
+//sum talk
+function sumUp(arr){
+let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+  	sum = sum + arr[i];
+  }
+  return sum;
+}
+
+function fib(n){
+const result = [0, 1];
+for(let j = 2; j < n; j++){
+  	const a = result[j - 1];
+  	const b = result[j - 2];
+  	result.push(a + b);
+}
+  return result;
+}
+const arr = fib(7)
+
+arr+ " sums to "+sumUp(arr);
