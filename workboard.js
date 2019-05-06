@@ -1201,3 +1201,27 @@ const sum = nums.reduce(sumFunc);
   return sum
 }
 addUp([1,2,3,4,5, 11]);
+
+
+//another stringed together pair of algos
+function fib(n){
+const result = [0, 1];
+  for(let i =2; i <n; i++){
+ 	const a = result[i-1];
+   const b = result[i-2];
+    result.push(a + b)
+  }
+  return result;
+}
+
+
+function sumUp(arr){
+let sum = 0;
+  for(let i =0; i < arr.length; i++){
+  	sum = sum + arr[i];
+  }
+  return sum;
+}
+
+const arr = fib(7);
+sumUp(arr);
