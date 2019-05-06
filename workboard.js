@@ -1190,3 +1190,14 @@ const audi = new Car(14000, "moderate safety", "A5");
 
 const camry = new Car(103000, "poor safety", "Camry");
 camry.carMethod();
+
+//create function and reduce method inside that to add up numbers in array
+function addUp(nums){
+
+function sumFunc(current, number){
+return current + number;
+}
+const sum = nums.reduce(sumFunc);
+  return sum
+}
+addUp([1,2,3,4,5, 11]);
