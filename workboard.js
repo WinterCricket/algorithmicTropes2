@@ -1277,3 +1277,9 @@ return car + " is my car.";
  
 }
 myCars(["Camry LE","Audi A5", "Porche 911" ]);
+//use inline map with anonymous function
+function myCar(cars){
+const loftyeyes = cars.map(function(car){return car + " is my car."});
+return loftyeyes
+}
+myCar(["Camry LE","Audi A5", "Porche 911" ]);
