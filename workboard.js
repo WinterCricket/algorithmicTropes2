@@ -1267,3 +1267,13 @@ return cb(user);
 }
 
 response("Rory", sellStock);
+//car algo using map method
+function myCars(cars){
+
+function carAssertion(car){
+return car + " is my car.";
+}
+ return cars.map(carAssertion);
+ 
+}
+myCars(["Camry LE","Audi A5", "Porche 911" ]);
