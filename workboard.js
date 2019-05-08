@@ -1283,3 +1283,19 @@ const loftyeyes = cars.map(function(car){return car + " is my car."});
 return loftyeyes
 }
 myCar(["Camry LE","Audi A5", "Porche 911" ]);
+//median
+function median(values) {
+
+    values.sort( function(a,b) {return a - b;} );
+
+    const half = Math.floor(values.length/2);
+
+    if(values.length % 2)
+        return values[half];
+    else
+        return (values[half-1] + values[half]) / 2.0;
+}
+
+const list1 = [3, 8, 9, 1, 5];
+const list2 = [3, 8, 9, 4, 12, 16, 22];
+median(list1.concat(list2));
