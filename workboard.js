@@ -1321,3 +1321,31 @@ median(list2)
 const biglist = list1.concat(list2)
 //check order of biglist
 biglist.sort(function(a,b){return a-b;});
+
+
+//fib median
+function fib(n){
+	const result = [0, 1];
+  for(let i = 2; i < n; i++){
+  	let a = result[i-1];
+    let b = result[i -2];
+    result.push(a + b);
+  }
+  return result;
+}
+
+
+function median(values){
+	values.sort(function(a,b){return a - b});
+  
+  const half = Math.floor(values.length/2);
+  if(values.length % 2){
+  	return values[half];
+  } else {
+  	return (values[half-1] + values[half])/2;
+  }
+}
+const list1 = fib(7);
+list1;
+median(list1);
+
