@@ -1299,3 +1299,25 @@ function median(values) {
 const list1 = [3, 8, 9, 1, 5];
 const list2 = [3, 8, 9, 4, 12, 16, 22];
 median(list1.concat(list2));
+//medians tested and checked
+function median(values){
+	values.sort(function(a,b){return a - b;});
+  
+  const half = Math.floor(values.length/2);
+  if(values.length % 2){
+  	return values[half];
+  } else {
+  	return (values[half-1] + values[half])/2;
+  }
+}
+const list1 = [1,23,33,2,55,34];
+median(list1)
+list1.sort(function(a,b){return a - b;});
+const list2 = [1,88,24];
+list2.sort(function(a,b){return a-b;});
+median(list2)
+
+//check concat
+const biglist = list1.concat(list2)
+//check order of biglist
+biglist.sort(function(a,b){return a-b;});
