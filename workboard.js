@@ -1361,5 +1361,20 @@ const values = arr1.concat(arr2);
  
 }
 median([1,3,5],[8,4,6,12]);
+//median algo that can return two medians
+function median(arr1, arr2){
+const values = arr1.concat(arr2);
+ values.sort(function(a,b){return a - b;});
+  const half = Math.floor(values.length/2);
+  if(values.length%2){
+  	return values[half];
+  } else {
+  	const first = values[half -1]; 
+    const second = values[half];
+    return first +" , "+ second;
+  }
+ 
+}
+median([1,3,5],[8, 6,12]);
 
 
