@@ -1348,4 +1348,18 @@ function median(values){
 const list1 = fib(7);
 list1;
 median(list1);
+//median using two arguments
+function median(arr1, arr2){
+const values = arr1.concat(arr2);
+ values.sort(function(a,b){return a - b;});
+  const half = Math.floor(values.length/2);
+  if(values.length%2){
+  	return values[half];
+  } else {
+  	return (values[half -1] + values[half])/2;
+  }
+ 
+}
+median([1,3,5],[8,4,6,12]);
+
 
