@@ -1371,10 +1371,33 @@ const values = arr1.concat(arr2);
   } else {
   	const first = values[half -1]; 
     const second = values[half];
-    return first +" , "+ second;
+    return first +", "+ second;
   }
  
 }
 median([1,3,5],[8, 6,12]);
+
+//missing numbers from any number of arrays, lists
+function missingNum(arr1, ...args){
+  const bigArray = arr1.concat(...args);
+  bigArray.sort(function(a,b){return a - b;});
+let cache= [];
+
+    for(let i = 1; i < bigArray.length; i++) 
+    {     
+        if(bigArray[i] - bigArray[i-1] != 1) 
+        {         
+            let x = bigArray[i] - bigArray[i-1];
+            let j = 1;
+            while (j<x)
+            {
+                cache.push(bigArray[i-1]+j);
+                j++;
+            }
+        }
+    }
+  return cache;
+}
+ missingNum([1,3,6],[2,4],[7, 9]);//[5,8]
 
 
