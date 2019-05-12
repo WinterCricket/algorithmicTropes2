@@ -1399,5 +1399,45 @@ let cache= [];
   return cache;
 }
  missingNum([1,3,6],[2,4],[7, 9]);//[5,8]
+//comparison for what is missing
+function missingNum(arr1, ...args){
+  const bigArray = arr1.concat(...args);
+  bigArray.sort(function(a,b){return a - b;});
+let cache= [];
+
+    for(let i = 1; i < bigArray.length; i++) 
+    {     
+        if(bigArray[i] - bigArray[i-1] != 1) 
+        {         
+            let x = bigArray[i] - bigArray[i-1];
+            let j = 1;
+            while (j<x)
+            {
+                cache.push(bigArray[i-1]+j);
+                j++;
+            }
+        }
+    }
+  return cache;
 
 
+
+//removing differences
+function getArrayDiff(a, b) {
+    var ret = [];
+    if (!(Array.isArray(a) && Array.isArray(b))) {
+        return ret;
+    }
+    var i;
+    var key;
+
+    for (i = a.length - 1; i >= 0; i--) {
+      key = a[i];
+      if (-1 === b.indexOf(key)) {
+        ret.push(key);
+      }
+    }
+
+    return ret;
+}
+getArrayDiff([1,1,2,3],[1,2]);
