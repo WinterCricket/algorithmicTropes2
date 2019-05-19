@@ -1403,7 +1403,7 @@ let cache= [];
 function missingNum(arr1, ...args){
   const bigArray = arr1.concat(...args);
   bigArray.sort(function(a,b){return a - b;});
-let cache= [];
+let bucket= [];
 
     for(let i = 1; i < bigArray.length; i++) 
     {     
@@ -1413,12 +1413,12 @@ let cache= [];
             let j = 1;
             while (j<x)
             {
-                cache.push(bigArray[i-1]+j);
+                bucket.push(bigArray[i-1]+j);
                 j++;
             }
         }
     }
-  return cache;
+  return bucket;
 
 
 
@@ -1441,3 +1441,22 @@ function getArrayDiff(a, b) {
     return ret;
 }
 getArrayDiff([1,1,2,3],[1,2]);
+
+
+//combinations algo
+function rps(rounds){
+let results = [];
+const poss = ["r", "p", "s"];
+function play(playedSoFar, rounds){
+	if(rounds === 0){
+  	results.push(playedSoFar);
+    return;
+  }
+  for(let i =0; i <poss.length; i++){
+  	play(playedSoFar + poss[i], rounds-1)
+  }
+}
+  play('', rounds);
+  return results;
+}
+rps(3)
