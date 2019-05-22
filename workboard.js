@@ -1552,5 +1552,5 @@ const capacity = 750;
 const displayer = knapsack(items, capacity);
 
 function myFunction(){
-document.getElementById("demo").innerHTML= displayer;
+document.getElementById("demo").innerHTML= JSON.stringify(displayer);
 }
