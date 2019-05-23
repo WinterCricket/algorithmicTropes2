@@ -1488,7 +1488,7 @@ function knapsack(items, capacity){
   return(getLast());
 
   function getLast(){
-    var lastRow = memo[memo.length - 1];
+    const lastRow = memo[memo.length - 1];
     return lastRow[lastRow.length - 1];
   }
 
@@ -1531,26 +1531,15 @@ function knapsack(items, capacity){
 
 // test
 const items = [
-  {w:70,v:135},
-  {w:73,v:139},
-  {w:77,v:149},
-  {w:80,v:150},
-  {w:82,v:156},
-  {w:87,v:163},
-  {w:90,v:173},
-  {w:94,v:184},
-  {w:98,v:192},
-  {w:106,v:201},
-  {w:110,v:210},
-  {w:113,v:214},
-  {w:115,v:221},
-  {w:118,v:229},
-  {w:120,v:240},
+  {w:2, v:5},
+  {w:3, v:15},
+  {w:5, v:10}
 ];
 
-const capacity = 750;
+const capacity = 8;
 const displayer = knapsack(items, capacity);
 
 function myFunction(){
-document.getElementById("demo").innerHTML= JSON.stringify(displayer);
+// document.getElementById("demo").innerHTML= JSON.stringify("max value: "+displayer.maxValue+"which objects to grab: "+displayer.subset);
+document.getElementById("demo").innerHTML = JSON.stringify("max value: " +displayer.maxValue) +"  objects to grab:  "+ JSON.stringify(displayer.subset);
 }
