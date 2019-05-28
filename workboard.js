@@ -1472,13 +1472,13 @@ function knapsack(items, capacity){
   // which will be later used as the code execution goes on.
   // This is called memoization in programming.
   // The cell will store best solution objects for different capacities and selectable items.
-  var memo = [];
+  let memo = [];
 
   // Filling the sub-problem solutions grid.
-  for (var i = 0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
     // Variable 'cap' is the capacity for sub-problems. In this example, 'cap' ranges from 1 to 6.
-    var row = [];
-    for (var cap = 1; cap <= capacity; cap++) {
+    let row = [];
+    for (let cap = 1; cap <= capacity; cap++) {
       row.push(getAnswer(i,cap));
     }
     memo.push(row);
@@ -1495,17 +1495,17 @@ function knapsack(items, capacity){
   function getAnswer(row,cap){
     const NO_ANSWER = {maxValue:0, subset:[]};
     // the column number starts from zero.
-    var col = cap - 1;
-    var prevItem = items[row];
+    const col = cap - 1;
+    const prevItem = items[row];
     // The remaining capacity for the sub-problem to solve.
-    var remaining = cap - prevItem.w;
+    const remaining = cap - prevItem.w;
 
     // Refer to the last solution for this capacity,
     // which is in the cell of the previous row with the same column
-    var prevAnswer = row > 0 ? memo[row - 1][col] || NO_ANSWER : NO_ANSWER;
+    const prevAnswer = row > 0 ? memo[row - 1][col] || NO_ANSWER : NO_ANSWER;
     // Refer to the last solution for the remaining capacity,
     // which is in the cell of the previous row with the corresponding column
-    var prevSubAnswer = row > 0 ? memo[row - 1][remaining - 1] || NO_ANSWER : NO_ANSWER;
+    const prevSubAnswer = row > 0 ? memo[row - 1][remaining - 1] || NO_ANSWER : NO_ANSWER;
 
     // If any one of the items weights greater than the 'cap', return the last solution
     if(remaining < 0){
@@ -1514,13 +1514,13 @@ function knapsack(items, capacity){
 
     // Compare the current best solution for the sub-problem with a specific capacity
     // to a new solution trial with the lastItem(new item) added
-    var prevValue = prevAnswer.maxValue;
-    var prevSubValue = prevSubAnswer.maxValue;//check
+    const prevValue = prevAnswer.maxValue;
+   const prevSubValue = prevSubAnswer.maxValue;//check
 
-    var newValue = prevSubValue + prevItem.v;
+    const newValue = prevSubValue + prevItem.v;
     if(newValue >= prevValue){
       // copy the subset of the last sub-problem solution
-      var _prevSubSet = prevSubAnswer.subset.slice();
+      const _prevSubSet = prevSubAnswer.subset.slice();
       _prevSubSet.push(prevItem);
       return {maxValue: newValue, subset:_prevSubSet};
     }else{
@@ -1530,13 +1530,13 @@ function knapsack(items, capacity){
 }
 
 // test
-var items = [
+const items = [
   {w: 2, v: 5},
   {w: 3, v: 15},
   {w: 5, v: 10}
 ];
 
-var capacity = 9;
+const capacity = 9;
 const displayer = knapsack(items, capacity);
 
 /* result 
