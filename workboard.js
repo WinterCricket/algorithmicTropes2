@@ -1472,72 +1472,97 @@ function knapsack(items, capacity){
   // which will be later used as the code execution goes on.
   // This is called memoization in programming.
   // The cell will store best solution objects for different capacities and selectable items.
-  let memo = [];
+  var memo = [];
 
   // Filling the sub-problem solutions grid.
-  for (let i = 0; i < items.length; i++) {
+  for (var i = 0; i < items.length; i++) {
     // Variable 'cap' is the capacity for sub-problems. In this example, 'cap' ranges from 1 to 6.
-    let row = [];
-    for (let cap = 1; cap <= capacity; cap++) {
-      row.push(getSolution(i,cap));
+    var row = [];
+    for (var cap = 1; cap <= capacity; cap++) {
+      row.push(getAnswer(i,cap));
     }
     memo.push(row);
   }
 
   // The right-bottom-corner cell of the grid contains the final solution for the whole problem.
-  return(getLast());
+  return(getPrev());
 
-  function getLast(){
-    const lastRow = memo[memo.length - 1];
-    return lastRow[lastRow.length - 1];
+  function getPrev(){
+    var prevRow = memo[memo.length - 1];
+    return prevRow[prevRow.length - 1];
   }
 
-  function getSolution(row,cap){
-    const NO_SOLUTION = {maxValue:0, subset:[]};
+  function getAnswer(row,cap){
+    const NO_ANSWER = {maxValue:0, subset:[]};
     // the column number starts from zero.
-    const col = cap - 1;
-    const lastItem = items[row];
+    var col = cap - 1;
+    var prevItem = items[row];
     // The remaining capacity for the sub-problem to solve.
-    const remaining = cap - lastItem.w;
+    var remaining = cap - prevItem.w;
 
     // Refer to the last solution for this capacity,
     // which is in the cell of the previous row with the same column
-    const lastSolution = row > 0 ? memo[row - 1][col] || NO_SOLUTION : NO_SOLUTION;
+    var prevAnswer = row > 0 ? memo[row - 1][col] || NO_ANSWER : NO_ANSWER;
     // Refer to the last solution for the remaining capacity,
     // which is in the cell of the previous row with the corresponding column
-    const lastSubSolution = row > 0 ? memo[row - 1][remaining - 1] || NO_SOLUTION : NO_SOLUTION;
+    var prevSubAnswer = row > 0 ? memo[row - 1][remaining - 1] || NO_ANSWER : NO_ANSWER;
 
     // If any one of the items weights greater than the 'cap', return the last solution
     if(remaining < 0){
-      return lastSolution;
+      return prevAnswer;
     }
 
     // Compare the current best solution for the sub-problem with a specific capacity
     // to a new solution trial with the lastItem(new item) added
-    const lastValue = lastSolution.maxValue;
-    const lastSubValue = lastSubSolution.maxValue;
+    var prevValue = prevAnswer.maxValue;
+    var prevSubValue = prevSubAnswer.maxValue;//check
 
-    const newValue = lastSubValue + lastItem.v;
-    if(newValue >= lastValue){
+    var newValue = prevSubValue + prevItem.v;
+    if(newValue >= prevValue){
       // copy the subset of the last sub-problem solution
-      const _lastSubSet = lastSubSolution.subset.slice();
-      _lastSubSet.push(lastItem);
-      return {maxValue: newValue, subset:_lastSubSet};
+      var _prevSubSet = prevSubAnswer.subset.slice();
+      _prevSubSet.push(prevItem);
+      return {maxValue: newValue, subset:_prevSubSet};
     }else{
-      return lastSolution;
+      return prevAnswer;
     }
   }
 }
 
 // test
-const items = [
-  {w:2, v:5},
-  {w:3, v:15},
-  {w:5, v:10}
+var items = [
+  {w: 2, v: 5},
+  {w: 3, v: 15},
+  {w: 5, v: 10}
 ];
 
-const capacity = 8;
+var capacity = 9;
 const displayer = knapsack(items, capacity);
+
+/* result 
+{ maxValue: 1458,
+  subset: 
+   [ { w: 70, v: 135 },
+     { w: 77, v: 149 },
+     { w: 82, v: 156 },
+     { w: 90, v: 173 },
+     { w: 94, v: 184 },
+     { w: 98, v: 192 },
+     { w: 118, v: 229 },
+     { w: 120, v: 240 } ] }
+*/
+//  @alexbelyeu
+// alexbelyeu commented Feb 19, 2018 • 
+// Just adding the sub-problem solutions grid (or memo in this example) here for the sake of completion, with the values and capacity from the first example:
+
+//                Capacity
+// v  / w  -   1  2  3  4  5  6 
+// -------------------------------
+// 3  / 1  -   3  3  3  3  3  3 
+// 6  / 1  -   6  9  9  9  9  9
+// 5  / 2  -   6  9  11 14 14 14
+// 9  / 2  -   6  9  15 18 20 23
+// 10 / 3  -   6  9  15 18 20 25
 
 function myFunction(){
 // document.getElementById("demo").innerHTML= JSON.stringify("max value: "+displayer.maxValue+"which objects to grab: "+displayer.subset);
