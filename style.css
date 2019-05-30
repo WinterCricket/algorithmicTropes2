@@ -1,5 +1,18 @@
+body{
+	background-color: salmon;
+}
+div {
+	margin: 20%;
+	border: 2px yellow solid;
+}
+
 p {
 	font-size: 3em;
-	color: sienna ;
+	color: yellow ;
 	text-align: center;
+}
+button {
+	margin: 8px;
+	background-color: black;
+	color: yellow;
 }
