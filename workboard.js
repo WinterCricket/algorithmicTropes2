@@ -1575,7 +1575,7 @@
 function convertToRoman(num){
 
 	//make roman object
-	const romanToNum = {
+	const romanToArabic = {
 		M: 1000,
 		CM: 900,
 		D: 500,
@@ -1592,11 +1592,11 @@ function convertToRoman(num){
 	};
 	let roman = "";//roman cache
 	debugger//check in chrome dev
-	for(let key in romanToNum){
-		romanToNum[key];
-		while(num >= romanToNum[key]){
+	for(let key in romanToArabic){
+		romanToArabic[key];
+		while(num >= romanToArabic[key]){
 			roman += key;
-			num -= romanToNum[key];
+			num -= romanToArabic[key];
 			
 		}
 	}
@@ -1606,3 +1606,40 @@ const romulan = convertToRoman(12);
 function myFunction(){
 document.getElementById("demo").innerHTML = romulan;
 }		
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="utf-8">
+//     <title>Clicker</title>
+//     <meta name="description" content="">
+//     <style></style>
+// </head>
+// <body>
+//     <button>Click!</button>
+
+// <script>
+//     const counter = {
+//         cnt: 0,
+//         inc: function() {
+//             cnt++;
+//             console.log(cnt);
+//         }
+//     };
+//     const button = document.getElementsByTagName('button')[0];
+//     button.addEventListener('click', counter.inc(), false);
+// </script>
+// </body>
+// </html>
+
+function chunk(array, size) {
+   const chunked = [];
+  let index = 0;
+   while(index < array.length){
+    chunked.push(array.slice(index, index + size)+"<br>");
+    index += size;
+   }
+   return chunked;
+ }
+document.getElementById("demo").innerHTML = chunk([1,4,7,9,3,6,8], 3)
