@@ -1655,6 +1655,9 @@ chunk: (array, size)=> {
    return chunked;
  }
 }
+//html page test:
+//document.getElementById("demo").innerHTML = chunk([1,2,3,4,5,6,7,8,9,6], 4);
+//jest test:
 module.exports = chunking;
 
 //the test
