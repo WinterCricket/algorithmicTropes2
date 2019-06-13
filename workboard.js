@@ -1633,13 +1633,38 @@ document.getElementById("demo").innerHTML = romulan;
 // </body>
 // </html>
 
-function chunk(array, size) {
+// function chunk(array, size) {
+//    const chunked = [];
+//   let index = 0;
+//    while(index < array.length){
+//     chunked.push(array.slice(index, index + size)+"<br>");
+//     index += size;
+//    }
+//    return chunked;
+//  }
+// document.getElementById("demo").innerHTML = chunk([1,4,7,9,3,6,8], 3)
+// the algo
+const chunking = {
+chunk: (array, size)=> {
    const chunked = [];
   let index = 0;
    while(index < array.length){
-    chunked.push(array.slice(index, index + size)+"<br>");
+    chunked.push(array.slice(index, index + size));
     index += size;
    }
    return chunked;
  }
-document.getElementById("demo").innerHTML = chunk([1,4,7,9,3,6,8], 3)
+}
+module.exports = chunking;
+
+//the test
+const chunking = require('./chunking');
+
+
+test('Check if chunking exists', ()=>{
+	expect(chunking).toBeDefined();
+});
+
+test('Divide array into seperate arrays three sepeate arrays of lengths 3, 3, and 1', ()=> {
+	expect(chunking.chunk([1,2,3,4,5,6,7], 3)).toEqual([[1,2,3],[4,5,6],[7]]);
+} );
