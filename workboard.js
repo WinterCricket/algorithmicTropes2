@@ -1671,3 +1671,31 @@ test('Check if chunking exists', ()=>{
 test('Divide array into seperate arrays three sepeate arrays of lengths 3, 3, and 1', ()=> {
 	expect(chunking.chunk([1,2,3,4,5,6,7], 3)).toEqual([[1,2,3],[4,5,6],[7]]);
 } );
+//
+//algo of chunk file none object making
+const chunk = (array, len) =>{
+	const chunked = [];
+	let index = 0;
+	while(index < array.length){
+		chunked.push(array.slice(index, index + len));
+		index += len;
+	}
+	return chunked;
+	}
+
+module.exports = chunk;
+
+//test of algo file
+const chunk = require('./chunk');
+
+
+test('Check if chunk exists', ()=>{
+	expect(chunk).toBeDefined();
+});
+
+test('Divide array into seperate arrays three separate arrays of lengths 3, 3, and 1', ()=> {
+	const array = [1,2,3,4,5,6,7];
+	const len = 3;
+	const chunked = chunk(array, len);
+	expect(chunked).toEqual([[1,2,3],[4,5,6],[7]]);
+});
