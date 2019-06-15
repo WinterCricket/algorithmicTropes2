@@ -1699,3 +1699,33 @@ test('Divide array into seperate arrays three separate arrays of lengths 3, 3, a
 	const chunked = chunk(array, len);
 	expect(chunked).toEqual([[1,2,3],[4,5,6],[7]]);
 });
+
+
+//another version of reverse string algo to test/no reverse method
+const reversestring = { 
+	// reverseString: (str)=>
+ //  str
+ //    .toLowerCase()
+ //    .split('')
+ //    .reverse()
+ //    .join(''),
+
+reverseString: (str)=>{
+	const strArray = str
+	.toLowerCase()
+	.split('');
+  let cache = [];
+  for(let i = str.length -1; i >=0; i--){
+    
+  	cache
+  	.push(strArray[i]);
+  }
+  
+ return cache
+ .join('');
+  
+  
+}
+
+}
+module.exports = reversestring;
