@@ -1729,3 +1729,24 @@ reverseString: (str)=>{
 
 }
 module.exports = reversestring;
+
+//palindrome testing with jest
+//js page
+const palindrometest = {
+	palTest: (str)=>{
+		const rev = str.split('').reverse().join('');
+		return rev === str;
+	} 
+}
+module.exports = palindrometest;
+//test.js page
+const palindrometest = require('./palindrometest');
+
+
+test('To check if palindrometest exists', ()=>{
+	expect(palindrometest).toBeDefined();
+})
+
+test('Should confirm that racecar is a palindrome', ()=>{
+	expect(palindrometest.palTest('racecar')).toBeTruthy();
+});
